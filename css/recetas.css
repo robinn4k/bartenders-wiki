@@ -1,0 +1,45 @@
+/* Estilos para la página de recetas */
+.cocteles-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.cocteles-list {
+    flex: 0 0 250px;
+    max-height: 70vh;
+    overflow-y: auto;
+    border-right: 1px solid #ffc800;
+    padding-right: 0.5rem;
+}
+
+.coctel-detalles {
+    flex: 1;
+}
+
+.coctel-item {
+    margin: 0.5rem 0;
+    padding: 0.3rem;
+    cursor: pointer;
+    border: 1px solid #ffc800;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.coctel-item:hover {
+    background-color: #ffc800;
+    color: #2b2b2b;
+}
+
+@media (max-width: 600px) {
+    .cocteles-container {
+        flex-direction: column;
+    }
+    .cocteles-list {
+        flex: none;
+        max-height: unset;
+        border-right: none;
+        border-bottom: 1px solid #ffc800;
+        padding-bottom: 0.5rem;
+    }
+}
