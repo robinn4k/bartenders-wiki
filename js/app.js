@@ -42,21 +42,31 @@ document.addEventListener('DOMContentLoaded', () => {
    ***********************************************/
   console.debug('DEBUG: Iniciando fetch a cocteles.json...');
   fetch('cocteles.json')
-    .then(response => {
-      console.debug('DEBUG: Respuesta recibida del servidor:', response);
-      return response.json();
-    })
-    .then(data => {
-      console.debug('DEBUG: Datos parseados del JSON:', data);
-      const cocteles = data.cocteles;
-
-      // Aquí llamamos a la función que genera la lista en la izquierda
-      console.debug('DEBUG: Llamando a mostrarListaCocteles...');
-      mostrarListaCocteles(cocteles);
-    })
-    .catch(error => {
-      console.error('ERROR al cargar el JSON de cocteles:', error);
-    });
+      .then(response => {
+          console.debug('DEBUG: Respuesta recibida del servidor:', response);
+          if (!response.ok) { // Comprobar si la respuesta fue exitosa (código 200-299)
+              throw new Error(`HTTP error! status: ${response.status}`); // Lanzar un error si no lo fue
+          }
+          return response.json();
+      })
+      .then(data => {
+          console.debug('DEBUG: Datos parseados del JSON:', data);
+          const cocteles = data.cocteles;
+          if (!cocteles || !Array.isArray(cocteles)) {
+              console.error('ERROR: El JSON no tiene la estructura esperada (cocteles debe ser un array).');
+              return; // Importante: detener la ejecución si el formato es incorrecto
+          }
+          console.debug('DEBUG: Llamando a mostrarListaCocteles...');
+          mostrarListaCocteles(cocteles);
+      })
+      .catch(error => {
+          console.error('ERROR al cargar o procesar el JSON de cocteles:', error);
+          // Mostrar un mensaje al usuario en la página en caso de error
+          const detallesDiv = document.getElementById('coctel-detalles');
+          if (detallesDiv) {
+              detallesDiv.innerHTML = '<p style="color: red;">Error al cargar los cócteles. Por favor, inténtelo de nuevo más tarde.</p>';
+          }
+      });
 });
 
 /****************************************************
