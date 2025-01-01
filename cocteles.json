@@ -3,6 +3,89 @@
       {
         "id": "margarita",
         "nombre": "Margarita",
+        "imagen": "img/coctel.jpg",
+        "metodo": "Shake tequila, triple sec y jugo de limón con hielo.",
+        "descripcion": "El Margarita es un cóctel mexicano clásico..."
+      },
+      {
+        "id": "mojito",
+        "nombre": "Mojito",
+        "imagen": "img/mojito.jpg",
+        "metodo": "Macerar hojas de menta y azúcar, añadir ron y soda.",
+        "descripcion": "Tradicional de Cuba, fresco y aromático..."
+      },
+      {
+        "id": "martini",
+        "nombre": "Martini",
+        "imagen": "img/martini.jpg",
+        "metodo": "Agitar o remover ginebra con vermouth, luego colar.",
+        "descripcion": "Uno de los cócteles más famosos y elegantes..."
+      },
+      {
+        "id": "margarita",
+        "nombre": "Margarita",
+        "imagen": "img/margarita.jpg",
+        "metodo": "Shake tequila, triple sec y jugo de limón con hielo.",
+        "descripcion": "El Margarita es un cóctel mexicano clásico..."
+      },
+      {
+        "id": "mojito",
+        "nombre": "Mojito",
+        "imagen": "img/mojito.jpg",
+        "metodo": "Macerar hojas de menta y azúcar, añadir ron y soda.",
+        "descripcion": "Tradicional de Cuba, fresco y aromático..."
+      },
+      {
+        "id": "martini",
+        "nombre": "Martini",
+        "imagen": "img/martini.jpg",
+        "metodo": "Agitar o remover ginebra con vermouth, luego colar.",
+        "descripcion": "Uno de los cócteles más famosos y elegantes..."
+      },
+      {
+        "id": "margarita",
+        "nombre": "Margarita",
+        "imagen": "img/margarita.jpg",
+        "metodo": "Shake tequila, triple sec y jugo de limón con hielo.",
+        "descripcion": "El Margarita es un cóctel mexicano clásico..."
+      },
+      {
+        "id": "mojito",
+        "nombre": "Mojito",
+        "imagen": "img/mojito.jpg",
+        "metodo": "Macerar hojas de menta y azúcar, añadir ron y soda.",
+        "descripcion": "Tradicional de Cuba, fresco y aromático..."
+      },
+      {
+        "id": "martini",
+        "nombre": "Martini",
+        "imagen": "img/martini.jpg",
+        "metodo": "Agitar o remover ginebra con vermouth, luego colar.",
+        "descripcion": "Uno de los cócteles más famosos y elegantes..."
+      },
+      {
+        "id": "margarita",
+        "nombre": "Margarita",
+        "imagen": "img/margarita.jpg",
+        "metodo": "Shake tequila, triple sec y jugo de limón con hielo.",
+        "descripcion": "El Margarita es un cóctel mexicano clásico..."
+      },
+      {
+        "id": "mojito",
+        "nombre": "Mojito",
+        "imagen": "img/mojito.jpg",
+        "metodo": "Macerar hojas de menta y azúcar, añadir ron y soda.",
+        "descripcion": "Tradicional de Cuba, fresco y aromático..."
+      },
+      {
+        "id": "martini",
+        "nombre": "Martini",
+        "imagen": "img/martini.jpg",
+        "metodo": "Agitar o remover ginebra con vermouth, luego colar.",
+        "descripcion": "Uno de los cócteles más famosos y elegantes..."
+      },{
+        "id": "margarita",
+        "nombre": "Margarita",
         "imagen": "img/margarita.jpg",
         "metodo": "Shake tequila, triple sec y jugo de limón con hielo.",
         "descripcion": "El Margarita es un cóctel mexicano clásico..."

@@ -136,3 +136,29 @@ function activarLogicaSubmenu() {
     });
   });
 }
+// Suponiendo que ya cargaste 'cocteles.json' con fetch, etc.
+
+function mostrarListaCocteles(cocteles) {
+  const listaDiv = document.getElementById('cocteles-list');
+  
+  cocteles.forEach(coctel => {
+    const item = document.createElement('div');
+    item.classList.add('coctel-item');
+    item.textContent = coctel.nombre; // Nombre del cóctel
+    // Al hacer clic, mostrar detalles
+    item.addEventListener('click', () => {
+      mostrarDetallesCoctel(coctel);
+    });
+    listaDiv.appendChild(item);
+  });
+}
+
+function mostrarDetallesCoctel(coctel) {
+  const detallesDiv = document.getElementById('coctel-detalles');
+  detallesDiv.innerHTML = `
+    <h3>${coctel.nombre}</h3>
+    <img src="${coctel.imagen}" alt="${coctel.nombre}" style="max-width: 200px;" />
+    <p><strong>Método:</strong> ${coctel.metodo}</p>
+    <p>${coctel.descripcion}</p>
+  `;
+}

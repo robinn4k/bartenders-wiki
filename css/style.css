@@ -228,3 +228,53 @@ main section {
     max-width: 120px;
   }
 }
+
+
+/* Contenedor que exhibe dos columnas en pantallas grandes */
+.cocteles-container {
+  display: flex;        /* Disposición en línea (2 columnas) */
+  gap: 1rem;            /* Espacio entre columnas */
+}
+
+/* Columna izquierda: lista de cócteles */
+.cocteles-list {
+  flex: 0 0 250px;      /* Ancho fijo ~250px */
+  max-height: 70vh;     /* Altura máxima; si hay muchos cócteles */
+  overflow-y: auto;     /* Scroll vertical si excede */
+  border-right: 1px solid #ffc800; /* Un borde decorativo */
+  padding-right: 0.5rem;           /* Espacio interno a la derecha */
+}
+
+/* Columna derecha: detalles */
+.coctel-detalles {
+  flex: 1;    /* Ocupa el resto del espacio */
+}
+
+/* Ejemplo de estilo para cada ítem de la lista: */
+.coctel-item {
+  margin: 0.5rem 0;
+  padding: 0.3rem;
+  cursor: pointer;
+  border: 1px solid #ffc800;
+  border-radius: 4px;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+.coctel-item:hover {
+  background-color: #ffc800;
+  color: #2b2b2b; /* Invertimos colores al pasar el ratón */
+}
+
+/* Modo responsive (móvil): pasamos a 1 columna */
+@media (max-width: 600px) {
+  .cocteles-container {
+    flex-direction: column;  
+  }
+  .cocteles-list {
+    flex: none; /* Deshacemos ancho fijo */
+    max-height: unset; /* Quitar restricción de altura */
+    border-right: none;
+    border-bottom: 1px solid #ffc800; /* Podrías poner un borde inferior */
+    padding-bottom: 0.5rem;
+  }
+}

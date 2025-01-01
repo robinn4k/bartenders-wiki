@@ -82,25 +82,28 @@
         </div>
       </div>
 
-     <!-- Página: Recetas -->
+    <!-- Página: Recetas -->
 <div id="recetas" class="page animate__animated">
   <div class="page-header">
     <h2>RECETAS</h2>
   </div>
   <div class="page-body">
-    <p>Selecciona un cóctel para ver detalles:</p>
 
-    <!-- Submenú dinámico: se llenará con generarSubmenuCocteles() -->
-    <ul class="sub-menu-recetas" id="lista-cocteles"></ul>
+    <div class="cocteles-container">
+      <!-- Columna izquierda: Lista de cócteles -->
+      <div class="cocteles-list" id="cocteles-list">
+        <!-- Se llenará con un <ul> o <div> con todos los cócteles (150) -->
+      </div>
 
-    <!-- Contenedor donde irán las secciones de cada cóctel -->
-    <div id="contenedor-cocteles"></div>
+      <!-- Columna derecha: Detalles del cóctel seleccionado -->
+      <div class="coctel-detalles" id="coctel-detalles">
+        <!-- Aquí se mostrarán los datos del cóctel seleccionado -->
+        <p>Selecciona un cóctel de la lista</p>
+      </div>
+    </div>
+
   </div>
-
-  <div class="page-footer">
-    <button class="btn-blue show-page" data-target="home">Volver</button>
-  </div>
-</div>
+ 
 
         <div class="page-footer">
           <button class="btn-blue show-page" data-target="home">Volver</button>
@@ -136,7 +139,7 @@
 
     <!-- Versión (o cualquier info al final de la página) -->
     <div class="flex">
-      <p id="version-text">Versión 1.2</p>
+      <p id="version-text">Versión 1.3</p>
     </div>
   </div>
 
