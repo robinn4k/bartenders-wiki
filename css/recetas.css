@@ -2,6 +2,9 @@
 .cocteles-container {
     display: flex;
     gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Opcional, para centrar completamente en toda la pantalla */
 }
 
 .cocteles-list {
