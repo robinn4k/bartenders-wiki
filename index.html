@@ -31,6 +31,8 @@
 
   <!-- Hoja de estilos principal -->
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/timeline.css" rel="stylesheet"> 
+  <!-- El nuevo archivo CSS para la línea de tiempo-->
 
   <!-- Animate.css para animaciones suaves -->
   <link
@@ -56,7 +58,7 @@
   <div id="wiki" class="container">
     <!-- Cabecera: Aquí podrías poner tu logo o título extra, si deseas -->
     <div id="header" style="text-align: center; margin-top: 1rem;">
-      <img src="logo.svg" alt="Bartender's Wiki" style="max-width: 150px;" />
+      <img src="img/apple-icon-180x180.png" alt="Bartender's Wiki" style="max-width: 150px;" />
     </div>
 
     <!-- Contenedor de “páginas” -->
@@ -85,57 +87,73 @@
           <h2>HISTORIA</h2>
         </div>
         <div class="page-body">
-          <div class="timeline"> <--- Contenedor principal de la línea de tiempo
-              <div class="timeline-event"> <--- Un evento en la línea de tiempo
-                  <div class="timeline-date">Siglo XV</div>
-                  <div class="timeline-content">
-                      <h3>Antecedentes</h3>
-                      <p>Aparición de las primeras bebidas mezcladas, como el "aqua vitae" o "agua de vida".</p>
-                  </div>
-              </div>
-              <div class="timeline-event"> <--- Otro evento
-                  <div class="timeline-date">Siglo XVII</div>
-                  <div class="timeline-content">
-                      <h3>El Punch</h3>
-                      <p>Popularización del "punch" en Inglaterra, una mezcla de alcohol, azúcar, zumo de cítricos, especias y agua.</p>
-                  </div>
-              </div>
-              <div class="timeline-event">
-                  <div class="timeline-date">Siglo XVIII</div>
-                  <div class="timeline-content">
-                      <h3>Expansión del Punch</h3>
-                      <p>El punch se extiende a las colonias americanas y a otras partes del mundo.</p>
-                  </div>
-              </div>
-              <div class="timeline-event">
-                  <div class="timeline-date">Siglo XIX</div>
-                  <div class="timeline-content">
-                      <h3>Nacimiento del Cóctel</h3>
-                      <p>Aparece la primera definición escrita de "cóctel" en 1806. Auge de los bares y la cultura del cóctel en Estados Unidos.</p>
-                  </div>
-              </div>
-              <div class="timeline-event">
-                  <div class="timeline-date">Principios del Siglo XX</div>
-                  <div class="timeline-content">
-                      <h3>La Ley Seca</h3>
-                      <p>La Ley Seca en Estados Unidos (1920-1933) impacta la cultura del cóctel, aunque fomenta la creatividad en la clandestinidad.</p>
-                  </div>
-              </div>
-                      <div class="timeline-event">
-                  <div class="timeline-date">Mediados del Siglo XX</div>
-                  <div class="timeline-content">
-                      <h3>La Edad de Oro</h3>
-                      <p>Resurgimiento de la coctelería clásica después de la Segunda Guerra Mundial.</p>
-                  </div>
-              </div>
-                      <div class="timeline-event">
-                  <div class="timeline-date">Finales del Siglo XX - Siglo XXI</div>
-                  <div class="timeline-content">
-                      <h3>La Coctelería Moderna</h3>
-                      <p>Renacimiento de la coctelería con nuevas técnicas, ingredientes y una mayor atención a la calidad y la creatividad.</p>
-                  </div>
-              </div>
-          </div> <--- Cierre del contenedor principal
+          <div class="timeline">
+              <ul>
+                  <li>
+                      <div class="right_content">
+                          <h2>Antecedentes (Siglo XV)</h2>
+                          <p>Aparición de las primeras bebidas mezcladas, como el "aqua vitae" o "agua de vida".</p>
+                      </div>
+                      <div class="left_content">
+                          <h3>Siglo XV</h3>
+                      </div>
+                  </li>
+                  <li>
+                      <div class="right_content">
+                          <h2>El Punch (Siglo XVII)</h2>
+                          <p>Popularización del "punch" en Inglaterra, una mezcla de alcohol, azúcar, zumo de cítricos, especias y agua.</p>
+                      </div>
+                      <div class="left_content">
+                          <h3>Siglo XVII</h3>
+                      </div>
+                  </li>
+                  <li>
+                      <div class="right_content">
+                          <h2>Expansión del Punch (Siglo XVIII)</h2>
+                          <p>El punch se extiende a las colonias americanas y a otras partes del mundo.</p>
+                      </div>
+                      <div class="left_content">
+                          <h3>Siglo XVIII</h3>
+                      </div>
+                  </li>
+                  <li>
+                      <div class="right_content">
+                          <h2>Nacimiento del Cóctel (Siglo XIX)</h2>
+                          <p>Aparece la primera definición escrita de "cóctel" en 1806. Auge de los bares y la cultura del cóctel en Estados Unidos.</p>
+                      </div>
+                      <div class="left_content">
+                          <h3>Siglo XIX</h3>
+                      </div>
+                  </li>
+                  <li>
+                      <div class="right_content">
+                          <h2>La Ley Seca (Principios del Siglo XX)</h2>
+                          <p>La Ley Seca en Estados Unidos (1920-1933) impacta la cultura del cóctel, aunque fomenta la creatividad en la clandestinidad.</p>
+                      </div>
+                      <div class="left_content">
+                          <h3>Principios del Siglo XX</h3>
+                      </div>
+                  </li>
+                  <li>
+                      <div class="right_content">
+                          <h2>La Edad de Oro (Mediados del Siglo XX)</h2>
+                          <p>Resurgimiento de la coctelería clásica después de la Segunda Guerra Mundial.</p>
+                      </div>
+                      <div class="left_content">
+                          <h3>Mediados del Siglo XX</h3>
+                      </div>
+                  </li>
+                  <li>
+                      <div class="right_content">
+                          <h2>La Coctelería Moderna (Finales del Siglo XX - Siglo XXI)</h2>
+                          <p>Renacimiento de la coctelería con nuevas técnicas, ingredientes y una mayor atención a la calidad y la creatividad.</p>
+                      </div>
+                      <div class="left_content">
+                          <h3>Finales del Siglo XX - Siglo XXI</h3>
+                      </div>
+                  </li>
+              </ul>
+          </div>
       </div>
       </div>
         <div class="page-footer">
@@ -201,7 +219,7 @@
 
     <!-- Versión (o cualquier info al final de la página) -->
     <div class="flex">
-      <p id="version-text">Versión 1.4.G</p>
+      <p id="version-text">Versión 1.5.G</p>
     </div>
   </div>
 
