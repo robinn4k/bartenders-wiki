@@ -1,9 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+  console.debug('DEBUG: DOMContentLoaded - Iniciando script principal.');
+
   /***********************************************
    * A) Navegación de “páginas” (Home, Historia, etc.)
    ***********************************************/
   document.querySelectorAll('.show-page').forEach(button => {
     button.addEventListener('click', () => {
+      console.debug('DEBUG: Botón de navegación pulsado.', {
+        'data-target': button.getAttribute('data-target')
+      });
+
       const target = button.getAttribute('data-target');
       
       // Ocultamos todas las .page
@@ -15,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const pageToShow = document.getElementById(target);
       if (pageToShow) {
         pageToShow.classList.add('active');
+        console.debug(`DEBUG: Mostrando página: #${target}`);
+      } else {
+        console.warn(`WARN: La página con id="${target}" no existe en el DOM.`);
       }
     });
   });
@@ -23,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const versionText = document.getElementById('version-text');
   if (versionText) {
     versionText.addEventListener('click', () => {
+      console.debug('DEBUG: Pulsado texto de versión. Recargando página...');
       window.location.reload();
     });
   }
@@ -30,15 +40,22 @@ document.addEventListener('DOMContentLoaded', () => {
   /***********************************************
    * B) Cargar datos de cócteles (cocteles.json)
    ***********************************************/
+  console.debug('DEBUG: Iniciando fetch a cocteles.json...');
   fetch('cocteles.json')
-    .then(response => response.json())
+    .then(response => {
+      console.debug('DEBUG: Respuesta recibida del servidor:', response);
+      return response.json();
+    })
     .then(data => {
+      console.debug('DEBUG: Datos parseados del JSON:', data);
       const cocteles = data.cocteles;
+
       // Aquí llamamos a la función que genera la lista en la izquierda
+      console.debug('DEBUG: Llamando a mostrarListaCocteles...');
       mostrarListaCocteles(cocteles);
     })
     .catch(error => {
-      console.error('Error al cargar el JSON de cocteles:', error);
+      console.error('ERROR al cargar el JSON de cocteles:', error);
     });
 });
 
@@ -51,8 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
  * Cada ítem, al hacer clic, llama a mostrarDetallesCoctel().
  */
 function mostrarListaCocteles(cocteles) {
+  console.debug('DEBUG: Ejecutando mostrarListaCocteles...', cocteles);
   const listaDiv = document.getElementById('cocteles-list');
-  if (!listaDiv) return;  // Si no existe en el HTML, salimos
+  if (!listaDiv) {
+    console.warn('WARN: No se encontró #cocteles-list en el DOM.');
+    return;
+  }
 
   cocteles.forEach(coctel => {
     const item = document.createElement('div');
@@ -61,19 +82,26 @@ function mostrarListaCocteles(cocteles) {
 
     // Al hacer clic, mostramos detalles en la columna derecha
     item.addEventListener('click', () => {
+      console.debug('DEBUG: Clic en ítem de cóctel:', coctel.nombre);
       mostrarDetallesCoctel(coctel);
     });
 
     listaDiv.appendChild(item);
   });
+
+  console.debug('DEBUG: Lista de cócteles generada correctamente.');
 }
 
 /**
  * Muestra la información del cóctel en la columna derecha (#coctel-detalles).
  */
 function mostrarDetallesCoctel(coctel) {
+  console.debug('DEBUG: Ejecutando mostrarDetallesCoctel...', coctel);
   const detallesDiv = document.getElementById('coctel-detalles');
-  if (!detallesDiv) return;
+  if (!detallesDiv) {
+    console.warn('WARN: No se encontró #coctel-detalles en el DOM.');
+    return;
+  }
 
   detallesDiv.innerHTML = `
     <h3>${coctel.nombre}</h3>
@@ -81,17 +109,6 @@ function mostrarDetallesCoctel(coctel) {
     <p><strong>Método:</strong> ${coctel.metodo}</p>
     <p>${coctel.descripcion}</p>
   `;
+
+  console.debug(`DEBUG: Mostrados detalles del cóctel: ${coctel.nombre}`);
 }
-
-/****************************************************
- * FUNCIONES “submenú” y “subpages” (OPCIONALES, NO USADAS)
- ****************************************************/
-
-/* 
-// Si prefieres un enfoque de submenú + secciones ocultas, 
-// puedes usar (pero ya no las llamas en el .then):
-
-function generarSubmenuCocteles(cocteles) { ... }
-function generarSeccionesCocteles(cocteles) { ... }
-function activarLogicaSubmenu() { ... }
-*/
