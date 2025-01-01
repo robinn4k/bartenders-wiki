@@ -122,3 +122,11 @@ function mostrarDetallesCoctel(coctel) {
 
   console.debug(`DEBUG: Mostrados detalles del cóctel: ${coctel.nombre}`);
 }
+
+const timelineEvents = document.querySelectorAll('.timeline-event');
+
+timelineEvents.forEach(event => {
+    event.addEventListener('click', () => {
+        event.classList.toggle('active'); // Agrega/quita la clase 'active'
+    });
+});
