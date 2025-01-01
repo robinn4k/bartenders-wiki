@@ -24,120 +24,131 @@
 /* ==========================================================================
    RESETEO
    ========================================================================== */
-   *,
-   *::before,
-   *::after {
-       box-sizing: border-box;
-       margin: 0;
-       padding: 0;
-   }
-   
-   /* ==========================================================================
-      ESTILOS BASE (HTML/BODY)
-      ========================================================================== */
-   html {
-       font-size: 16px; /* Tamaño de fuente base */
-   }
-   
-   body {
-       background-color: #2b2b2b;
-       color: #ffc800;
-       font-family: Arial, sans-serif;
-       min-height: 100vh;
-       display: flex;
-       flex-direction: column;
-   }
-   
-   /* ==========================================================================
-      CONTENEDOR PRINCIPAL
-      ========================================================================== */
-   .container {
-       max-width: 960px;
-       margin: 0 auto;
-       padding: 1rem;
-   }
-   
-   /* ==========================================================================
-      ENCABEZADO (HEADER)
-      ========================================================================== */
-   header {
-       text-align: center;
-       padding: 1rem 0;
-   }
-   
-   header h1 {
-       font-size: 3rem;
-       font-weight: 900;
-       text-transform: uppercase;
-       margin-bottom: 1rem;
-   }
-   
-   .bartenders {
-       color: #444;
-   }
-   
-   .trivia,
-   .wiki {
-       color: #ffc800;
-   }
-   
-   #header img { /* Imagen dentro del #header (opcional) */
-       max-width: 120px;
-   }
-   
-   /* ==========================================================================
-      NAVEGACIÓN (NAV)
-      ========================================================================== */
-   .sticky-nav {
-       position: sticky;
-       top: 0;
-       z-index: 100; /* Asegura que esté encima de otros elementos */
-       background-color: #333;
-   }
-   
-   .sticky-nav ul {
-       list-style: none;
-       display: flex;
-       justify-content: center;
-       padding: 0.5rem;
-   }
-   
-   .sticky-nav li {
-       margin: 0 1rem;
-   }
-   
-   .sticky-nav a {
-       color: #ffc800;
-       text-decoration: none;
-       font-weight: bold;
-       transition: color 0.2s ease;
-   }
-   
-   .sticky-nav a:hover {
-       color: #ffdd55;
-   }
-   
-   /* ==========================================================================
-      CONTENIDO PRINCIPAL (MAIN)
-      ========================================================================== */
-   main {
-       flex: 1; /* Permite que el main ocupe el espacio disponible */
-       padding: 1rem;
-       text-align: center; /* Centrado de texto por defecto en main */
-   }
-   
-   main section {
-       max-width: 600px;
-       width: 100%;
-       margin: 0 auto; /* Centra las secciones dentro de main */
-   }
-   
-   /* ==========================================================================
-      PÁGINAS Y SUBPÁGINAS
-      ========================================================================== */
-   #pages {
-       margin-top: 1rem;
-   }
+  
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==========================================================================
+   ESTILOS BASE (HTML/BODY)
+   ========================================================================== */
+html {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif; /* Fuente más moderna */
+    scroll-behavior: smooth; /* Scroll suave */
+}
+
+body {
+    background-color: #181818; /* Gris oscuro más moderno */
+    color: #eee; /* Gris claro para el texto */
+    line-height: 1.6; /* Mejora la legibilidad */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   CONTENEDOR PRINCIPAL
+   ========================================================================== */
+.container {
+    max-width: 1200px; /* Contenedor más ancho para pantallas grandes */
+    margin: 2rem auto; /* Márgenes superior e inferior */
+    padding: 0 2rem; /* Padding horizontal */
+}
+
+/* ==========================================================================
+   ENCABEZADO (HEADER)
+   ========================================================================== */
+header {
+    text-align: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid #333; /* Separador sutil */
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    font-weight: 700; /* Peso de fuente más ligero */
+    text-transform: uppercase;
+    letter-spacing: 0.1em; /* Espaciado entre letras */
+    color: #ffcc00; /* Amarillo más suave */
+}
+
+.bartenders {
+    color: #777;
+}
+
+.trivia,
+.wiki {
+    color: #ffcc00;
+}
+
+#header img {
+    max-width: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   NAVEGACIÓN (NAV)
+   ========================================================================== */
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(24, 24, 24, 0.9); /* Fondo semi-transparente */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque */
+}
+
+.sticky-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.sticky-nav li {
+    margin: 0 1.5rem;
+}
+
+.sticky-nav a {
+    color: #eee;
+    text-decoration: none;
+    font-weight: 500; /* Peso de fuente más ligero */
+    transition: color 0.3s ease, transform 0.2s ease; /* Transiciones más suaves */
+}
+
+.sticky-nav a:hover {
+    color: #ffcc00;
+    transform: scale(1.1); /* Ligero aumento al pasar el ratón */
+}
+
+/* ==========================================================================
+   CONTENIDO PRINCIPAL (MAIN)
+   ========================================================================== */
+main {
+    flex: 1;
+    padding: 2rem;
+    text-align: center;
+}
+
+main section {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* ==========================================================================
+   PÁGINAS Y SUBPÁGINAS
+   ========================================================================== */
+#pages {
+    margin-top: 2rem;
+}
    
    .page {
        display: none;
@@ -259,42 +270,31 @@
    }
    
    /* ==========================================================================
-      MEDIA QUERIES (RESPONSIVE DESIGN)
-      ========================================================================== */
-   @media (max-width: 600px) {
-       header h1 {
-           font-size: 2rem;
-       }
-   
-       .sticky-nav ul {
-           flex-direction: column;
-       }
-   
-       .sticky-nav li {
-           margin: 0.5rem 0;
-       }
-   
-       .sub-menu-recetas {
-           flex-direction: column;
-       }
-   
-       .sub-menu-recetas li {
-           margin-bottom: 0.5rem;
-       }
-   
-       .thumb {
-           max-width: 120px;
-       }
-   
-       .cocteles-container {
-           flex-direction: column;
-       }
-   
-       .cocteles-list {
-           flex: none;
-           max-height: unset;
-           border-right: none;
-           border-bottom: 1px solid #ffc800;
-           padding-bottom: 0.5rem;
-       }
-   }
+   MEDIA QUERIES (RESPONSIVE DESIGN)
+   ========================================================================== */
+@media (max-width: 768px) { /* Punto de quiebre más común para tablets */
+  header h1 {
+      font-size: 2.5rem;
+  }
+
+  .sticky-nav ul {
+      flex-direction: column;
+      align-items: center; /* Centra los elementos verticalmente */
+  }
+
+  .sticky-nav li {
+      margin: 0.75rem 0;
+  }
+
+  .cocteles-container {
+      flex-direction: column;
+  }
+
+  .cocteles-list {
+      flex: none;
+      max-height: unset;
+      border-right: none;
+      border-bottom: 1px solid #333;
+      padding-bottom: 1rem;
+  }
+}
