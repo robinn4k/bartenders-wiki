@@ -1,281 +1,300 @@
-/* ========== RESET GENERAL ========== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/*
+ * ==========================================================================
+ *  ESTILOS GENERALES DEL SITIO WEB
+ * ==========================================================================
+ *
+ *  Este archivo CSS contiene los estilos globales para el sitio web,
+ *  incluyendo el reseteo de estilos, la tipografía, los colores,
+ *  la estructura principal y el diseño responsive.
+ *
+ *  Secciones:
+ *    - Reseteo
+ *    - Estilos Base (HTML/Body)
+ *    - Contenedor Principal
+ *    - Encabezado (Header)
+ *    - Navegación (Nav)
+ *    - Contenido Principal (Main)
+ *    - Páginas y Subpáginas
+ *    - Utilidades (Clases reutilizables)
+ *    - Componentes Específicos (Ej: Lista de Cócteles)
+ *    - Media Queries (Responsive Design)
+ * ==========================================================================
+ */
 
-/* ========== ESTILOS GLOBALES (HTML/BODY) ========== */
-html, body {
-  background-color: #2b2b2b; /* Fondo oscuro */
-  color: #ffc800;           /* Texto amarillo */
-  font-family: Arial, sans-serif;
-  min-height: 100vh;        /* Permite crecer con contenido */
-}
-
-body {
-  display: flex;            /* Para estructurar verticalmente */
-  flex-direction: column;
-  margin: 0;                /* Asegura sin margen por defecto */
-}
-
-/* ========== CONTENEDOR PRINCIPAL ========== */
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-/* ========== ENCABEZADO EXTRA (OPCIONAL) ========== */
-#header {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-#header img {
-  max-width: 120px;
-}
-
-/* ========== BARRA DE NAVEGACIÓN FIJA (STICKY) ========== */
-.sticky-header {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background-color: #333;
-}
-
-.sticky-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  padding: 0.5rem;
-}
-
-.sticky-nav ul li {
-  margin: 0 1rem;
-}
-
-.sticky-nav ul li a {
-  color: #ffc800;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.2s ease;
-}
-
-.sticky-nav ul li a:hover {
-  color: #ffdd55; /* Amarillo más claro */
-}
-
-/* ========== HEADER (SI LO USAS COMO ENCABEZADO PRINCIPAL) ========== */
-header {
-  text-align: center;
-  padding: 1rem 0;
-}
-
-header h1 {
-  font-size: 3rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-/* Ejemplo para colorear “Bartender’s” y “Wiki/Trivia” por separado */
-.bartenders {
-  color: #444;  /* “Bartender’s” en gris */
-}
-.trivia, .wiki {
-  color: #ffc800;   /* “TRIVIA” / “WIKI” en amarillo */
-}
-
-/* ========== ÁREA PRINCIPAL (MAIN) ========== */
-main {
-  flex: 1;
-  display: flex;
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: center;     /* Centrar verticalmente */
-  padding: 1rem;
-  text-align: center;
-}
-
-/* Cada sección (p.ej. #home, #historia, etc.) será un “bloque” centrado */
-main section {
-  max-width: 600px;
-  width: 100%;
-}
-
-/* ========== SISTEMA DE PÁGINAS (page) ========== */
-#pages {
-  min-height: 80vh;   /* Espacio mínimo */
-  margin-top: 1rem;   /* Para separar del sticky nav */
-}
-
-.page {
-  display: none;      /* Ocultas por defecto */
-}
-.page.active {
-  display: block;     /* Solo la activa se ve */
-}
-
-/* Para ocultar secciones secundarias */
-.hidden {
-  display: none;
-}
-
-/* ========== TÍTULO DE “BIBLIOTECA” (EJEMPLO) ========== */
-.biblioteca-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-decoration: underline;
-}
-
-/* ========== SUBMENÚ DE RECETAS ========== */
-.sub-menu-recetas {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1rem 0;
-}
-
-.sub-menu-recetas li a {
-  color: #ffc800;
-  text-decoration: none;
-  font-weight: bold;
-  border: 1px solid #ffc800;
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  transition: background-color 0.3s ease;
-}
-
-.sub-menu-recetas li a img {
-  max-width: 24px;
-  margin-right: 0.4rem;
-}
-
-.sub-menu-recetas li a:hover {
-  background-color: #ffc800;
-  color: #2b2b2b;
-}
-
-/* ========== SUBPÁGINAS DE RECETAS (EJEMPLO) ========== */
-.subpage {
-  margin-top: 1rem;
-  text-align: left; /* Cambia a 'center' si prefieres centrar */
-}
-
-.subpage.hidden {
-  display: none;
-}
-
-/* Imagen del cóctel */
-.thumb {
-  max-width: 200px;
-  display: block;
-  margin: 1rem auto;
-}
-
-/* ========== FLEX UTILITY ========== */
-.flex {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-/* ========== BOTONES BÁSICOS ========== */
-.btn-blue {
-  padding: 0.5rem 1rem;
-  margin: 0.5rem;
-  background-color: #1e90ff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 4px;
-}
-
-.btn-blue:hover {
-  background-color: #3aa4ff;
-}
-
-/* ========== RESPONSIVE DESIGN (MEDIA QUERY) ========== */
-@media (max-width: 600px) {
-  /* Ajusta título principal */
-  header h1 {
-    font-size: 2rem;
-  }
-
-  /* Nav sticky en columnas */
-  .sticky-nav ul {
-    flex-direction: column;
-  }
-
-  .sticky-nav ul li {
-    margin: 0.5rem 0;
-  }
-
-  /* Submenú de recetas en columnas */
-  .sub-menu-recetas {
-    flex-direction: column;
-  }
-  .sub-menu-recetas li {
-    margin-bottom: 0.5rem;
-  }
-
-  /* Imagen de cóctel más pequeña */
-  .thumb {
-    max-width: 120px;
-  }
-}
-
-
-/* Contenedor que exhibe dos columnas en pantallas grandes */
-.cocteles-container {
-  display: flex;        /* Disposición en línea (2 columnas) */
-  gap: 1rem;            /* Espacio entre columnas */
-}
-
-/* Columna izquierda: lista de cócteles */
-.cocteles-list {
-  flex: 0 0 250px;      /* Ancho fijo ~250px */
-  max-height: 70vh;     /* Altura máxima; si hay muchos cócteles */
-  overflow-y: auto;     /* Scroll vertical si excede */
-  border-right: 1px solid #ffc800; /* Un borde decorativo */
-  padding-right: 0.5rem;           /* Espacio interno a la derecha */
-}
-
-/* Columna derecha: detalles */
-.coctel-detalles {
-  flex: 1;    /* Ocupa el resto del espacio */
-}
-
-/* Ejemplo de estilo para cada ítem de la lista: */
-.coctel-item {
-  margin: 0.5rem 0;
-  padding: 0.3rem;
-  cursor: pointer;
-  border: 1px solid #ffc800;
-  border-radius: 4px;
-  text-align: center;
-  transition: background-color 0.2s;
-}
-.coctel-item:hover {
-  background-color: #ffc800;
-  color: #2b2b2b; /* Invertimos colores al pasar el ratón */
-}
-
-/* Modo responsive (móvil): pasamos a 1 columna */
-@media (max-width: 600px) {
-  .cocteles-container {
-    flex-direction: column;  
-  }
-  .cocteles-list {
-    flex: none; /* Deshacemos ancho fijo */
-    max-height: unset; /* Quitar restricción de altura */
-    border-right: none;
-    border-bottom: 1px solid #ffc800; /* Podrías poner un borde inferior */
-    padding-bottom: 0.5rem;
-  }
-}
-
+/* ==========================================================================
+   RESETEO
+   ========================================================================== */
+   *,
+   *::before,
+   *::after {
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+   }
+   
+   /* ==========================================================================
+      ESTILOS BASE (HTML/BODY)
+      ========================================================================== */
+   html {
+       font-size: 16px; /* Tamaño de fuente base */
+   }
+   
+   body {
+       background-color: #2b2b2b;
+       color: #ffc800;
+       font-family: Arial, sans-serif;
+       min-height: 100vh;
+       display: flex;
+       flex-direction: column;
+   }
+   
+   /* ==========================================================================
+      CONTENEDOR PRINCIPAL
+      ========================================================================== */
+   .container {
+       max-width: 960px;
+       margin: 0 auto;
+       padding: 1rem;
+   }
+   
+   /* ==========================================================================
+      ENCABEZADO (HEADER)
+      ========================================================================== */
+   header {
+       text-align: center;
+       padding: 1rem 0;
+   }
+   
+   header h1 {
+       font-size: 3rem;
+       font-weight: 900;
+       text-transform: uppercase;
+       margin-bottom: 1rem;
+   }
+   
+   .bartenders {
+       color: #444;
+   }
+   
+   .trivia,
+   .wiki {
+       color: #ffc800;
+   }
+   
+   #header img { /* Imagen dentro del #header (opcional) */
+       max-width: 120px;
+   }
+   
+   /* ==========================================================================
+      NAVEGACIÓN (NAV)
+      ========================================================================== */
+   .sticky-nav {
+       position: sticky;
+       top: 0;
+       z-index: 100; /* Asegura que esté encima de otros elementos */
+       background-color: #333;
+   }
+   
+   .sticky-nav ul {
+       list-style: none;
+       display: flex;
+       justify-content: center;
+       padding: 0.5rem;
+   }
+   
+   .sticky-nav li {
+       margin: 0 1rem;
+   }
+   
+   .sticky-nav a {
+       color: #ffc800;
+       text-decoration: none;
+       font-weight: bold;
+       transition: color 0.2s ease;
+   }
+   
+   .sticky-nav a:hover {
+       color: #ffdd55;
+   }
+   
+   /* ==========================================================================
+      CONTENIDO PRINCIPAL (MAIN)
+      ========================================================================== */
+   main {
+       flex: 1; /* Permite que el main ocupe el espacio disponible */
+       padding: 1rem;
+       text-align: center; /* Centrado de texto por defecto en main */
+   }
+   
+   main section {
+       max-width: 600px;
+       width: 100%;
+       margin: 0 auto; /* Centra las secciones dentro de main */
+   }
+   
+   /* ==========================================================================
+      PÁGINAS Y SUBPÁGINAS
+      ========================================================================== */
+   #pages {
+       margin-top: 1rem;
+   }
+   
+   .page {
+       display: none;
+   }
+   
+   .page.active {
+       display: block;
+   }
+   
+   .hidden {
+       display: none;
+   }
+   
+   .biblioteca-title {
+       font-size: 2rem;
+       font-weight: 700;
+       margin-bottom: 1rem;
+       text-decoration: underline;
+   }
+   
+   .sub-menu-recetas {
+       list-style: none;
+       display: flex;
+       justify-content: center;
+       gap: 1rem;
+       margin: 1rem 0;
+   }
+   
+   .sub-menu-recetas a {
+       color: #ffc800;
+       text-decoration: none;
+       font-weight: bold;
+       border: 1px solid #ffc800;
+       padding: 0.3rem 0.6rem;
+       border-radius: 4px;
+       display: flex;
+       align-items: center;
+       transition: background-color 0.3s ease;
+   }
+   
+   .sub-menu-recetas img {
+       max-width: 24px;
+       margin-right: 0.4rem;
+   }
+   
+   .sub-menu-recetas a:hover {
+       background-color: #ffc800;
+       color: #2b2b2b;
+   }
+   
+   .subpage {
+       margin-top: 1rem;
+       text-align: left;
+   }
+   
+   .thumb {
+       max-width: 200px;
+       display: block;
+       margin: 1rem auto;
+   }
+   
+   /* ==========================================================================
+      UTILIDADES
+      ========================================================================== */
+   .flex {
+       display: flex;
+       justify-content: center;
+       margin-top: 1rem;
+   }
+   
+   .btn-blue {
+       padding: 0.5rem 1rem;
+       margin: 0.5rem;
+       background-color: #1e90ff;
+       color: #fff;
+       border: none;
+       cursor: pointer;
+       font-weight: bold;
+       border-radius: 4px;
+   }
+   
+   .btn-blue:hover {
+       background-color: #3aa4ff;
+   }
+   
+   /* ==========================================================================
+      COMPONENTES ESPECÍFICOS (Ej: Lista de Cócteles)
+      ========================================================================== */
+   .cocteles-container {
+       display: flex;
+       gap: 1rem;
+   }
+   
+   .cocteles-list {
+       flex: 0 0 250px;
+       max-height: 70vh;
+       overflow-y: auto;
+       border-right: 1px solid #ffc800;
+       padding-right: 0.5rem;
+   }
+   
+   .coctel-item {
+       margin: 0.5rem 0;
+       padding: 0.3rem;
+       cursor: pointer;
+       border: 1px solid #ffc800;
+       border-radius: 4px;
+       text-align: center;
+       transition: background-color 0.2s;
+   }
+   
+   .coctel-item:hover {
+       background-color: #ffc800;
+       color: #2b2b2b;
+   }
+   
+   .coctel-detalles {
+       flex: 1;
+   }
+   
+   /* ==========================================================================
+      MEDIA QUERIES (RESPONSIVE DESIGN)
+      ========================================================================== */
+   @media (max-width: 600px) {
+       header h1 {
+           font-size: 2rem;
+       }
+   
+       .sticky-nav ul {
+           flex-direction: column;
+       }
+   
+       .sticky-nav li {
+           margin: 0.5rem 0;
+       }
+   
+       .sub-menu-recetas {
+           flex-direction: column;
+       }
+   
+       .sub-menu-recetas li {
+           margin-bottom: 0.5rem;
+       }
+   
+       .thumb {
+           max-width: 120px;
+       }
+   
+       .cocteles-container {
+           flex-direction: column;
+       }
+   
+       .cocteles-list {
+           flex: none;
+           max-height: unset;
+           border-right: none;
+           border-bottom: 1px solid #ffc800;
+           padding-bottom: 0.5rem;
+       }
+   }
