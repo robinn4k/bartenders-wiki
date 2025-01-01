@@ -1,105 +1,230 @@
-/* ======= RESETEO BÁSICO ======= */
+/* ========== RESET GENERAL ========== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========== ESTILOS GLOBALES (HTML/BODY) ========== */
+html, body {
+  background-color: #2b2b2b; /* Fondo oscuro */
+  color: #ffc800;           /* Texto amarillo */
+  font-family: Arial, sans-serif;
+  min-height: 100vh;        /* Permite crecer con contenido */
+}
+
+body {
+  display: flex;            /* Para estructurar verticalmente */
+  flex-direction: column;
+  margin: 0;                /* Asegura sin margen por defecto */
+}
+
+/* ========== CONTENEDOR PRINCIPAL ========== */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ========== ENCABEZADO EXTRA (OPCIONAL) ========== */
+#header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+#header img {
+  max-width: 120px;
+}
+
+/* ========== BARRA DE NAVEGACIÓN FIJA (STICKY) ========== */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #333;
+}
+
+.sticky-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.sticky-nav ul li {
+  margin: 0 1rem;
+}
+
+.sticky-nav ul li a {
+  color: #ffc800;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.sticky-nav ul li a:hover {
+  color: #ffdd55; /* Amarillo más claro */
+}
+
+/* ========== HEADER (SI LO USAS COMO ENCABEZADO PRINCIPAL) ========== */
+header {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+/* Ejemplo para colorear “Bartender’s” y “Wiki/Trivia” por separado */
+.bartenders {
+  color: #444;  /* “Bartender’s” en gris */
+}
+.trivia, .wiki {
+  color: #ffc800;   /* “TRIVIA” / “WIKI” en amarillo */
+}
+
+/* ========== ÁREA PRINCIPAL (MAIN) ========== */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center;     /* Centrar verticalmente */
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Cada sección (p.ej. #home, #historia, etc.) será un “bloque” centrado */
+main section {
+  max-width: 600px;
+  width: 100%;
+}
+
+/* ========== SISTEMA DE PÁGINAS (page) ========== */
+#pages {
+  min-height: 80vh;   /* Espacio mínimo */
+  margin-top: 1rem;   /* Para separar del sticky nav */
+}
+
+.page {
+  display: none;      /* Ocultas por defecto */
+}
+.page.active {
+  display: block;     /* Solo la activa se ve */
+}
+
+/* Para ocultar secciones secundarias */
+.hidden {
+  display: none;
+}
+
+/* ========== TÍTULO DE “BIBLIOTECA” (EJEMPLO) ========== */
+.biblioteca-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-decoration: underline;
+}
+
+/* ========== SUBMENÚ DE RECETAS ========== */
+.sub-menu-recetas {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.sub-menu-recetas li a {
+  color: #ffc800;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid #ffc800;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.sub-menu-recetas li a img {
+  max-width: 24px;
+  margin-right: 0.4rem;
+}
+
+.sub-menu-recetas li a:hover {
+  background-color: #ffc800;
+  color: #2b2b2b;
+}
+
+/* ========== SUBPÁGINAS DE RECETAS (EJEMPLO) ========== */
+.subpage {
+  margin-top: 1rem;
+  text-align: left; /* Cambia a 'center' si prefieres centrar */
+}
+
+.subpage.hidden {
+  display: none;
+}
+
+/* Imagen del cóctel */
+.thumb {
+  max-width: 200px;
+  display: block;
+  margin: 1rem auto;
+}
+
+/* ========== FLEX UTILITY ========== */
+.flex {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* ========== BOTONES BÁSICOS ========== */
+.btn-blue {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  background-color: #1e90ff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.btn-blue:hover {
+  background-color: #3aa4ff;
+}
+
+/* ========== RESPONSIVE DESIGN (MEDIA QUERY) ========== */
+@media (max-width: 600px) {
+  /* Ajusta título principal */
+  header h1 {
+    font-size: 2rem;
   }
-  
-  /* ======= ESTILOS GLOBALES ======= */
-  body {
-    background-color: #2b2b2b;  /* Fondo oscuro */
-    color: #ffc800;            /* Texto amarillo */
-    font-family: Arial, sans-serif;
-    min-height: 100vh;         /* Para que crezca según contenido */
-    display: flex;
+
+  /* Nav sticky en columnas */
+  .sticky-nav ul {
     flex-direction: column;
   }
-  
-  /* ======= ENCABEZADO ======= */
-  header {
-    text-align: center;
-    padding: 1rem 0;
+
+  .sticky-nav ul li {
+    margin: 0.5rem 0;
   }
-  header h1 {
-    font-size: 3rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
+
+  /* Submenú de recetas en columnas */
+  .sub-menu-recetas {
+    flex-direction: column;
   }
-  .bartenders {
-    color: #444;  /* “Bartender’s” en gris */
+  .sub-menu-recetas li {
+    margin-bottom: 0.5rem;
   }
-  .trivia {
-    color: #ffc800;  /* “TRIVIA” en amarillo */
+
+  /* Imagen de cóctel más pequeña */
+  .thumb {
+    max-width: 120px;
   }
-  
-  /* ======= MENÚ DE NAVEGACIÓN ======= */
-  nav {
-    background-color: #333;
-    padding: 0.5rem;
-    text-align: center;
-  }
-  nav ul {
-    list-style: none;
-  }
-  nav ul li {
-    display: inline-block;
-    margin: 0 1rem;
-  }
-  nav ul li a {
-    color: #ffc800;
-    text-decoration: none;
-    font-weight: 700;
-    transition: color 0.2s ease;
-  }
-  nav ul li a:hover {
-    color: #ffdd55; /* Un amarillo más claro */
-  }
-  
-  /* ======= CONTENEDOR PRINCIPAL ======= */
-  main {
-    flex: 1; /* Ocupará el espacio central */
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center;     /* Centra verticalmente */
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  /* Cada sección será un “bloque” centrado */
-  main section {
-    max-width: 600px;
-    width: 100%;
-  }
-  
-  /* ======= TÍTULO DE LA BIBLIOTECA ======= */
-  .biblioteca-title {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-decoration: underline;
-  }
-  
-  /* ======= OCULTAR SECCIONES ======= */
-  .hidden {
-    display: none;
-  }
-  
-  /* ======= RESPONSIVE DESIGN ======= */
-  /* Ejemplo: a pantallas menores de 600px, hacemos que 
-     el menú ocupe todo el ancho en bloque, etc. */
-  @media (max-width: 600px) {
-    header h1 {
-      font-size: 2rem;
-    }
-  
-    nav ul li {
-      display: block;
-      margin: 0.5rem 0;
-    }
-  
-    main {
-      padding: 1rem;
-    }
-  }
-  
+}

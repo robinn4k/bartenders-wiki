@@ -1,65 +1,181 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Bartender's Trivia</title>
-  <!-- Enlazamos la hoja de estilo externa -->
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <title>Bartender's Wiki</title>
+  <!-- Ajusta el viewport para móviles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <!-- Color del navegador en móviles (Android) -->
+  <meta name="theme-color" content="#333333" />
+
+  <!-- Íconos y Manifest (ajusta las rutas según tu proyecto) -->
+  <link rel="icon" href="favicon.svg">
+  <link rel="apple-touch-icon" href="icon_ios.png">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Fuentes (opcional, ajusta si no usas fonts.css) -->
+  <link href="fonts/fonts.css" rel="stylesheet">
+
+  <!-- Hoja de estilos principal -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- Animate.css para animaciones suaves -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 </head>
 <body>
-  <!-- Encabezado principal con el título -->
-  <header>
-    <h1>
-      <span class="bartenders">Bartender’s</span> 
-      <span class="trivia">TRIVIA</span>
-    </h1>
+  <!-- Barra de navegación fija (sticky) -->
+  <header class="sticky-header">
+    <nav class="sticky-nav">
+      <ul>
+        <!-- Vínculos para tus “páginas” internas -->
+        <li><a href="#" class="show-page" data-target="home">BIBLIOTECA</a></li>
+        <li><a href="#" class="show-page" data-target="historia">HISTORIA</a></li>
+        <li><a href="#" class="show-page" data-target="recetas">RECETAS</a></li>
+        <li><a href="#" class="show-page" data-target="definiciones">DEFINICIONES</a></li>
+        <li><a href="#" class="show-page" data-target="otros">OTROS</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Menú de navegación -->
-  <nav>
-    <ul>
-      <li><a href="#" data-section="home">BIBLIOTECA</a></li>
-      <li><a href="#" data-section="historia">HISTORIA &gt;</a></li>
-      <li><a href="#" data-section="recetas">RECETAS &gt;</a></li>
-      <li><a href="#" data-section="definiciones">DEFINICIONES &gt;</a></li>
-      <li><a href="#" data-section="otros">OTROS &gt;</a></li>
-    </ul>
-  </nav>
+  <div id="wiki" class="container">
+    <!-- Cabecera: Aquí podrías poner tu logo o título extra, si deseas -->
+    <div id="header" style="text-align: center; margin-top: 1rem;">
+      <img src="logo.svg" alt="Bartender's Wiki" style="max-width: 150px;" />
+    </div>
 
-  <!-- Contenedor principal -->
-  <main>
-    <!-- Sección Home (Biblioteca) -->
-    <section id="home">
-      <h2 class="biblioteca-title">BIBLIOTECA</h2>
-      <p>Selecciona una sección del menú para explorar más información.</p>
-    </section>
+    <!-- Contenedor de “páginas” -->
+    <div id="pages">
+      
+      <!-- Página principal (Home / Biblioteca) -->
+      <div id="home" class="page active animate__animated animate__fadeIn">
+        <div class="page-header">
+          <h2 class="biblioteca-title">BIBLIOTECA</h2>
+        </div>
+        <div class="page-body">
+          <p>Selecciona una sección para explorar más información.</p>
+        </div>
+        <!-- Botones para ir a otras "páginas" (opcional si ya tienes el sticky nav) -->
+        <!--
+        <div class="page-footer">
+          <button class="btn-blue show-page" data-target="historia">HISTORIA</button>
+          <button class="btn-blue show-page" data-target="recetas">RECETAS</button>
+          <button class="btn-blue show-page" data-target="definiciones">DEFINICIONES</button>
+          <button class="btn-blue show-page" data-target="otros">OTROS</button>
+        </div>
+        -->
+      </div>
 
-    <!-- Sección Historia -->
-    <section id="historia" class="hidden">
-      <h2>Historia</h2>
-      <p>Aquí iría tu contenido sobre la historia de la coctelería, bartenders, etc.</p>
-    </section>
+      <!-- Página: Historia -->
+      <div id="historia" class="page animate__animated">
+        <div class="page-header">
+          <h2>HISTORIA</h2>
+        </div>
+        <div class="page-body">
+          <p>Aquí iría tu contenido sobre la historia de la coctelería, bartenders, etc.</p>
+        </div>
+        <div class="page-footer">
+          <!-- Botón para volver si deseas (opcional con sticky nav) -->
+          <button class="btn-blue show-page" data-target="home">Volver</button>
+        </div>
+      </div>
 
-    <!-- Sección Recetas -->
-    <section id="recetas" class="hidden">
-      <h2>Recetas</h2>
-      <p>Puedes poner tus recetas favoritas, técnicas y más.</p>
-    </section>
+      <!-- Página: Recetas -->
+      <div id="recetas" class="page animate__animated">
+        <div class="page-header">
+          <h2>RECETAS</h2>
+        </div>
 
-    <!-- Sección Definiciones -->
-    <section id="definiciones" class="hidden">
-      <h2>Definiciones</h2>
-      <p>Explica términos, palabras y conceptos relacionados con la mixología.</p>
-    </section>
+        <div class="page-body">
+          <p>Selecciona un cóctel para ver detalles:</p>
 
-    <!-- Sección Otros -->
-    <section id="otros" class="hidden">
-      <h2>Otros</h2>
-      <p>Incluye información diversa o curiosidades.</p>
-    </section>
-  </main>
+          <!-- Submenú de cocteles con íconos (thumbnails) -->
+          <ul class="sub-menu-recetas">
+            <li>
+              <a href="#" data-coctel="margarita">
+                <img src="img/margarita-icon.png" alt="Margarita" />
+                Margarita
+              </a>
+            </li>
+            <li>
+              <a href="#" data-coctel="mojito">
+                <img src="img/mojito-icon.png" alt="Mojito" />
+                Mojito
+              </a>
+            </li>
+            <li>
+              <a href="#" data-coctel="martini">
+                <img src="img/martini-icon.png" alt="Martini" />
+                Martini
+              </a>
+            </li>
+          </ul>
 
-  <!-- Script principal -->
-  <script src="app.js"></script>
+          <!-- Contenedor para cada cóctel (subpage) -->
+          <div id="margarita" class="subpage hidden animate__animated animate__fadeIn">
+            <h3>Margarita</h3>
+            <img src="img/margarita.jpg" alt="Margarita" class="thumb" />
+            <p><strong>Método:</strong> Agitar tequila, triple sec y jugo de limón.</p>
+            <p>Descripción y detalles de la Margarita...</p>
+          </div>
+
+          <div id="mojito" class="subpage hidden animate__animated animate__fadeIn">
+            <h3>Mojito</h3>
+            <img src="img/mojito.jpg" alt="Mojito" class="thumb" />
+            <p><strong>Método:</strong> Macerar menta con azúcar, añadir ron, hielo y soda.</p>
+            <p>Descripción y detalles del Mojito...</p>
+          </div>
+
+          <div id="martini" class="subpage hidden animate__animated animate__fadeIn">
+            <h3>Martini</h3>
+            <img src="img/martini.jpg" alt="Martini" class="thumb" />
+            <p><strong>Método:</strong> Mezclar ginebra con vermouth, servir con aceituna.</p>
+            <p>Descripción y detalles del Martini...</p>
+          </div>
+        </div>
+
+        <div class="page-footer">
+          <button class="btn-blue show-page" data-target="home">Volver</button>
+        </div>
+      </div>
+
+      <!-- Página: Definiciones -->
+      <div id="definiciones" class="page animate__animated">
+        <div class="page-header">
+          <h2>DEFINICIONES</h2>
+        </div>
+        <div class="page-body">
+          <p>Explica términos, palabras y conceptos relacionados con la mixología.</p>
+        </div>
+        <div class="page-footer">
+          <button class="btn-blue show-page" data-target="home">Volver</button>
+        </div>
+      </div>
+
+      <!-- Página: Otros -->
+      <div id="otros" class="page animate__animated">
+        <div class="page-header">
+          <h2>OTROS</h2>
+        </div>
+        <div class="page-body">
+          <p>Información adicional y/o curiosidades.</p>
+        </div>
+        <div class="page-footer">
+          <button class="btn-blue show-page" data-target="home">Volver</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Versión (o cualquier info al final de la página) -->
+    <div class="flex">
+      <p id="version-text">Versión 1.1</p>
+    </div>
+  </div>
+
+  <!-- Scripts, ajusta rutas a tu gusto -->
+  <script src="js/pequejs.min.js" type="text/javascript"></script>
+  <script src="js/app.js" type="module"></script>
 </body>
 </html>
