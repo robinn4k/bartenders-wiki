@@ -82,59 +82,25 @@
         </div>
       </div>
 
-      <!-- Página: Recetas -->
-      <div id="recetas" class="page animate__animated">
-        <div class="page-header">
-          <h2>RECETAS</h2>
-        </div>
+     <!-- Página: Recetas -->
+<div id="recetas" class="page animate__animated">
+  <div class="page-header">
+    <h2>RECETAS</h2>
+  </div>
+  <div class="page-body">
+    <p>Selecciona un cóctel para ver detalles:</p>
 
-        <div class="page-body">
-          <p>Selecciona un cóctel para ver detalles:</p>
+    <!-- Submenú dinámico: se llenará con generarSubmenuCocteles() -->
+    <ul class="sub-menu-recetas" id="lista-cocteles"></ul>
 
-          <!-- Submenú de cocteles con íconos (thumbnails) -->
-          <ul class="sub-menu-recetas" id="lista-cocteles">
-            <li>
-              <a href="#" data-coctel="margarita">
-                <img src="img/margarita-icon.png" alt="Margarita" />
-                Margarita
-              </a>
-            </li>
-            <li>
-              <a href="#" data-coctel="mojito">
-                <img src="img/mojito-icon.png" alt="Mojito" />
-                Mojito
-              </a>
-            </li>
-            <li>
-              <a href="#" data-coctel="martini">
-                <img src="img/martini-icon.png" alt="Martini" />
-                Martini
-              </a>
-            </li>
-          </ul>
+    <!-- Contenedor donde irán las secciones de cada cóctel -->
+    <div id="contenedor-cocteles"></div>
+  </div>
 
-          <!-- Contenedor para cada cóctel (subpage) -->
-          <div id="margarita" class="subpage hidden animate__animated animate__fadeIn">
-            <h3>Margarita</h3>
-            <img src="img/margarita.jpg" alt="Margarita" class="thumb" />
-            <p><strong>Método:</strong> Agitar tequila, triple sec y jugo de limón.</p>
-            <p>Descripción y detalles de la Margarita...</p>
-          </div>
-
-          <div id="mojito" class="subpage hidden animate__animated animate__fadeIn">
-            <h3>Mojito</h3>
-            <img src="img/mojito.jpg" alt="Mojito" class="thumb" />
-            <p><strong>Método:</strong> Macerar menta con azúcar, añadir ron, hielo y soda.</p>
-            <p>Descripción y detalles del Mojito...</p>
-          </div>
-
-          <div id="martini" class="subpage hidden animate__animated animate__fadeIn">
-            <h3>Martini</h3>
-            <img src="img/martini.jpg" alt="Martini" class="thumb" />
-            <p><strong>Método:</strong> Mezclar ginebra con vermouth, servir con aceituna.</p>
-            <p>Descripción y detalles del Martini...</p>
-          </div>
-        </div>
+  <div class="page-footer">
+    <button class="btn-blue show-page" data-target="home">Volver</button>
+  </div>
+</div>
 
         <div class="page-footer">
           <button class="btn-blue show-page" data-target="home">Volver</button>
@@ -170,7 +136,7 @@
 
     <!-- Versión (o cualquier info al final de la página) -->
     <div class="flex">
-      <p id="version-text">Versión 1.1</p>
+      <p id="version-text">Versión 1.2</p>
     </div>
   </div>
 

@@ -1,31 +1,35 @@
-// wiki.js (type="module" si prefieres)
 document.addEventListener('DOMContentLoaded', () => {
-  // Al hacer clic en cualquier elemento con .show-page
+  /***********************************************
+   * A) Navegación de “páginas” (Home, Historia, etc.)
+   ***********************************************/
   document.querySelectorAll('.show-page').forEach(button => {
     button.addEventListener('click', () => {
       const target = button.getAttribute('data-target');
       
-      // Ocultar todas las páginas
+      // Ocultamos todas las .page
       document.querySelectorAll('.page').forEach(page => {
         page.classList.remove('active');
       });
 
-      // Mostrar solo la página requerida
-      document.getElementById(target).classList.add('active');
+      // Mostramos solo la .page requerida
+      const pageToShow = document.getElementById(target);
+      if (pageToShow) {
+        pageToShow.classList.add('active');
+      }
     });
   });
 
-  // Opcional: Forzar recarga al hacer clic en #version-text
+  // Opción B: Forzar recarga si se hace clic en la versión
   const versionText = document.getElementById('version-text');
   if (versionText) {
     versionText.addEventListener('click', () => {
-      // Forzar recarga (por si hay cambios)
       window.location.reload();
     });
   }
-});
-document.addEventListener('DOMContentLoaded', () => {
-  // Cargamos el archivo cocteles.json
+
+  /***********************************************
+   * B) Cargar datos de cócteles (cocteles.json)
+   ***********************************************/
   fetch('cocteles.json')
     .then(response => response.json())
     .then(data => {
@@ -39,36 +43,53 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Genera <li> con <a> para cada cóctel en el submenú
+/****************************************************
+ * FUNCIONES AUXILIARES PARA GENERAR LISTAS Y SECCIONES
+ ****************************************************/
+
+/**
+ * Genera <li><a> en el <ul id="lista-cocteles">
+ * para cada cóctel presente en el JSON
+ */
 function generarSubmenuCocteles(cocteles) {
+  // Asegurarnos de que existe <ul id="lista-cocteles">
   const lista = document.getElementById('lista-cocteles');
+  if (!lista) return; // Si no existe, salimos
+
   cocteles.forEach(coctel => {
     const li = document.createElement('li');
     const a = document.createElement('a');
-    a.href = '#';               // Evita saltar de página
-    a.dataset.coctel = coctel.id; // Para identificar cuál mostrar
-    a.textContent = coctel.nombre;
+    
+    a.href = '#'; 
+    a.dataset.coctel = coctel.id;   // "margarita", "mojito", etc.
+    a.textContent = coctel.nombre;  // El nombre del cóctel
 
     li.appendChild(a);
     lista.appendChild(li);
   });
 }
 
-// Genera un <div> por cada cóctel (sección de receta), inicialmente oculto
+/**
+ * Genera un <div class="subpage hidden"> para
+ * cada cóctel en el <div id="contenedor-cocteles">
+ */
 function generarSeccionesCocteles(cocteles) {
+  // Asegurarnos de que existe <div id="contenedor-cocteles">
   const contenedor = document.getElementById('contenedor-cocteles');
+  if (!contenedor) return;
+
   cocteles.forEach(coctel => {
     const subpage = document.createElement('div');
-    subpage.classList.add('subpage', 'hidden'); // .hidden => display:none
-    subpage.id = coctel.id;
+    subpage.classList.add('subpage', 'hidden'); 
+    subpage.id = coctel.id; // "margarita", "mojito", "martini", etc.
 
-    // Título del cóctel
+    // Título
     const h3 = document.createElement('h3');
     h3.textContent = coctel.nombre;
 
     // Imagen
     const img = document.createElement('img');
-    img.src = coctel.imagen;
+    img.src = coctel.imagen;   // e.g. "img/margarita.jpg"
     img.alt = coctel.nombre;
     img.style.maxWidth = '200px';
 
@@ -80,31 +101,34 @@ function generarSeccionesCocteles(cocteles) {
     const pDesc = document.createElement('p');
     pDesc.textContent = coctel.descripcion;
 
-    // Agregamos todo al div
+    // Armamos el subpage
     subpage.appendChild(h3);
     subpage.appendChild(img);
     subpage.appendChild(pMetodo);
     subpage.appendChild(pDesc);
 
-    // Metemos el subpage en el contenedor
+    // Lo anexamos al contenedor principal
     contenedor.appendChild(subpage);
   });
 }
 
-// Lógica para mostrar/ocultar cada cóctel al hacer clic en el submenú
+/**
+ * Asigna los listeners para mostrar/ocultar
+ * la subpage correspondiente al hacer clic
+ * en un enlace del submenú
+ */
 function activarLogicaSubmenu() {
   const links = document.querySelectorAll('#lista-cocteles a');
   links.forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
-      const coctelId = link.dataset.coctel; // Ej: "margarita", "mojito", etc.
+      const coctelId = link.dataset.coctel;
 
       // Ocultamos todas las subpages
       document.querySelectorAll('.subpage').forEach(div => {
         div.classList.add('hidden');
       });
-
-      // Mostramos solo el coctel correspondiente
+      // Mostramos la subpage de este cóctel
       const coctelDiv = document.getElementById(coctelId);
       if (coctelDiv) {
         coctelDiv.classList.remove('hidden');
