@@ -127,6 +127,6 @@ const timelineEvents = document.querySelectorAll('.timeline-event');
 
 timelineEvents.forEach(event => {
     event.addEventListener('click', () => {
-        event.classList.toggle('active'); // Agrega/quita la clase 'active'
+        event.classList.toggle('active');
     });
 });
