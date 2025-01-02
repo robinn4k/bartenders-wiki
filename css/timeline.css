@@ -40,7 +40,7 @@
     background: rgba(59, 112, 239, 1);
     border-radius: 50%;
     box-shadow: 0 0 0 3px rgba(58, 112, 239, 0.2);
-    left: 12px; /* Posicionar el punto */
+    left: 16px; /* Posicionar el punto */
     z-index: 2;
 }
 
