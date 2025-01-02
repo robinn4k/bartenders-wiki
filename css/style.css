@@ -33,6 +33,46 @@ body {
     min-height: 100vh;
     margin: 0 auto;
 }
+/*==========================================================================
+   NAVEGACIÓN (NAV)
+   ========================================================================== */
+   .sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: #181818e6;
+  }
+  .sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #181818e6; /* Fondo semi-transparente */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque */
+}
+
+.sticky-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.sticky-nav li {
+    margin: 0 1.5rem;
+}
+
+.sticky-nav a {
+    color: #eee;
+    text-decoration: none;
+    font-weight: 500; /* Peso de fuente más ligero */
+    transition: color 0.3s ease, transform 0.2s ease; /* Transiciones más suaves */
+}
+
+.sticky-nav a:hover {
+    color: #ffcc00;
+    transform: scale(1.1); /* Ligero aumento al pasar el ratón */
+}
+
 
 /* ==========================================================================
    CONTENEDOR PRINCIPAL
@@ -225,4 +265,16 @@ main section {
     .cocteles-container {
         flex-direction: column;
     }
+}
+.sticky-nav ul {
+    flex-direction: column;
+    align-items: center; /* Centra los elementos verticalmente */
+}
+
+.sticky-nav li {
+    margin: 0.75rem 0;
+}
+
+.cocteles-container {
+    flex-direction: column;
 }
