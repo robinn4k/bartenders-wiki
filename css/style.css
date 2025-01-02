@@ -33,18 +33,7 @@ body {
     min-height: 100vh;
     margin: 0 auto;
 }
-/*==========================================================================
-   NAVEGACIÓN (NAV)
-   ========================================================================== */
-   .sticky-header {
-    position: sticky;
-  }
-  .sticky-nav {
-    top: 0;
-    z-index: 100;
-    background-color: #181818e6; /* Fondo semi-transparente */
-    backdrop-filter: blur(5px); /* Efecto de desenfoque */
-}
+
 /* ==========================================================================
    CONTENEDOR PRINCIPAL
    ========================================================================== */
