@@ -12,6 +12,7 @@
     position: absolute;
     height: 100%;
     left: 50%;
+    transform: translateX(-50%); /* Centrar la línea vertical */
     width: 2px;
     top: -20px;
     background: #fff;
@@ -24,32 +25,20 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px; /* Aumentar el espacio entre elementos */
 }
 
 .timeline ul li {
-    position: relative;
-    width: 50%;
-    padding: 20px;
+    display: flex;
+    justify-content: space-between; /* Espaciar contenido a los lados */
+    align-items: center; /* Alinear verticalmente */
+    width: 100%; /* Los li ocupan todo el ancho */
+    padding: 10px 0; /* Reducir el padding vertical */
     box-sizing: border-box;
 }
 
-.timeline ul li .right_content h2 {
-    color: rgba(59, 112, 239, 1);
-    padding: 0px 2px 18px 0px;
-    margin-bottom: 10px;
-}
-
 .timeline ul li:nth-child(odd) {
-    float: left;
-    text-align: right;
-    padding-right: 80px;
-}
-
-.timeline ul li:nth-child(even) {
-    float: right;
-    text-align: left;
-    padding-left: 80px;
+    flex-direction: row-reverse; /* Invertir el orden para elementos impares */
 }
 
 .timeline ul li::before {
@@ -60,29 +49,33 @@
     background: rgba(59, 112, 239, 1);
     border-radius: 50%;
     box-shadow: 0 0 0 3px rgba(58, 112, 239, 0.2);
-    top: calc(50% - 6px);
+    z-index: 2; /* Asegurar que el punto esté sobre la línea */
 }
 
 .timeline ul li:nth-child(odd)::before {
-    right: 0px;
+    right: calc(50% - 8px); /* Ajustar la posición */
 }
 
 .timeline ul li:nth-child(even)::before {
-    left: 0px;
+    left: calc(50% - 8px); /* Ajustar la posición */
 }
 
 .left_content, .right_content {
-    display: inline-block;
     padding: 12px 20px;
     color: #fff;
     box-shadow: 0 0 0 3px rgba(59, 112, 239, 0.3);
     border-radius: 18px;
     background-color: #333;
-    max-width: 80%;
+    max-width: 40%; /* Reducir el ancho máximo para evitar solapamientos */
     box-sizing: border-box;
     word-wrap: break-word;
 }
-
+.timeline ul li .right_content h2 {
+    color: rgba(59, 112, 239, 1);
+    padding: 0px 2px 18px 0px;
+    margin-bottom: 10px;
+    text-align: left; /*Alinear el texto a la izquierda*/
+}
 /* Media Query for smaller screens */
 @media (max-width: 767px) {
     .timeline::before {
