@@ -36,7 +36,12 @@ body {
 /*==========================================================================
    NAVEGACIÓN (NAV)
    ========================================================================== */
-  
+   .sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: #181818e6;
+  }
   .sticky-nav {
     position: sticky;
     top: 0;
@@ -47,8 +52,6 @@ body {
 
 .sticky-nav ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
     padding: 1rem;
 }
 
@@ -59,7 +62,6 @@ body {
 .sticky-nav a {
     color: #eee;
     text-decoration: none;
-    font-weight: 500; /* Peso de fuente más ligero */
     transition: color 0.3s ease, transform 0.2s ease; /* Transiciones más suaves */
 }
 
