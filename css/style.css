@@ -223,20 +223,21 @@ main section {
     .cocteles-container {
         flex-direction: column;
     }
-}
-.sticky-nav ul {
-    flex-direction: column;
-    align-items: center; /* Centra los elementos verticalmente */
-}
 
-.sticky-nav li {
-    margin: 0.75rem 0;
-}
+    .sticky-nav ul {
+        flex-direction: column;
+        align-items: center; /* Centra los elementos verticalmente */
+    }
 
-.cocteles-container {
-    flex-direction: column;
-}
+    .sticky-nav li {
+        margin: 0.75rem 0;
+    }
 
-.logo {
-    max-width: 50px ;
+    .cocteles-container {
+        flex-direction: column;
+    }
+
+    .logo {
+        max-width: 50px ;
+    }
 }
