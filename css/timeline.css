@@ -1,149 +1,84 @@
-
-  
-  .timeline:before {
-    content: '';
-    position:absolute;
-    height:100%;
-    left:50%;
-    width:2px;
-    top:-20px;
-    background:#fff;
-    z-index:1;
-  }
-  .timeline{
-    position:relative;
+/* Estilos de la línea de tiempo */
+.timeline {
+    position: relative;
     margin: 50px auto;
-    width:1000px;
-    padding:50px 0;
-  }
-  
-  
-  .timeline ul{
-    margin:0;
-    padding:0 ;
-  }
-  
-  .timeline ul li{
-    list-style:none;
-    box-sizing:border-box; 
-    line-height:normal;
-    position:relative;
-    width:50%;
-    padding: 40px 70px;
-  }
-  
-  .timeline ul li .right_content h2{
-    color:rgba(59,112,239,1);
-    padding:0px 2px 18px 0px;
-  }
-  /*.timeline ul li:nth-child(odd){
-    float:left;
-    text-align:right;
-    clear:both;
-  }
-  
-  .timeline ul li:nth-child(even){
-    float:right;
-    text-align:left;
-    clear:both;
-  }*/
-  
-  .left_content{
-    padding-bottom:20px;
-  }
-  
-  .timeline ul li:nth-child(odd):before{
+    width: 90%;
+    max-width: 1000px;
+    padding: 50px 0;
+}
+
+.timeline::before {
     content: '';
-    position:absolute;
-    width:10px;
-    height:10px;
-    background:rgba(59,112,239,1);
-    border-radius:50%;
-    box-shadow: 0 0 0 3px rgba(58,112,239,0.2);
-    right:-6px;
-    top:24px;
-    z-index:1;
-  }
-  
-  .timeline ul li:nth-child(even):before{
+    position: absolute;
+    height: 100%;
+    left: 20px; /* Línea a la izquierda */
+    width: 2px;
+    top: -20px;
+    background: #fff;
+    z-index: 1;
+}
+
+.timeline ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.timeline ul li {
+    position: relative;
+    padding: 20px 50px; /* Ajustar padding */
+    list-style: none;
+    display: flex; /* Usar flexbox */
+    align-items: center; /* Alinear verticalmente */
+}
+
+.timeline ul li::before {
     content: '';
-    position:absolute;
-    width:10px;
-    height:10px;
-   background:rgba(59,112,239,1);
-    border-radius:50%;
-    box-shadow: 0 0 0 3px rgba(58,112,239,0.2);
-    left:-6px;
-    top:24px;
-  }
-  
-  .timeline ul li:nth-child(odd) .left_content{
-    position:absolute;
-    top:12px;
-    right:-165px;
-    margin:0;
-    padding:8px 16px;
-  
-    color:#fff;
-    box-shadow:0 0 0 3px rgba(59,112,239,0.3);
-    border-radius:18px;
-    
-  }
-  
-  .timeline ul li:nth-child(even) .left_content{
-    position:absolute;
-    top:12px;
-    left:-165px;
-    margin:0;
-    padding:8px 16px;
-    
-    color:#fff;
-    box-shadow:0 0 0 3px rgba(59,112,239,0.3);
-    border-radius:18px;
-    
-  }
-  
-  
-  @media (max-width: 1000px){
-    
-    .timeline{
-      width:100%;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: rgba(59, 112, 239, 1);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(58, 112, 239, 0.2);
+    left: 14px; /* Posicionar el punto */
+    z-index: 2;
+}
+
+.left_content {
+    padding: 12px 20px;
+    color: #fff;
+    box-shadow: 0 0 0 3px rgba(59, 112, 239, 0.3);
+    border-radius: 18px;
+    background-color: #333;
+    margin-left: 30px; /* Espacio entre el punto y el contenido */
+    max-width: 80%; /* Evitar que el contenido se extienda demasiado */
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+.timeline ul li .right_content h2 {
+    color: rgba(59, 112, 239, 1);
+    padding: 0px 2px 18px 0px;
+    margin-bottom: 10px;
+}
+
+/* Media Queries */
+@media (max-width: 767px) {
+    .timeline {
+        width: 100%;
+        padding: 20px 0; /* Reducir el padding en pantallas pequeñas */
     }
-  }
-  
-  @media (max-width: 767px){
-    .timeline{
-      width:100%;
+    .timeline::before {
+        left: 10px;
     }
-    .timeline:before{
-      left:20px;
+    .timeline ul li {
+        padding: 10px 40px; /* Reducir el padding en pantallas pequeñas */
     }
-    .timeline ul li:nth-child(odd),
-    .timeline ul li:nth-child(even){
-      width:100%;
-      text-align:left;
-     padding-left:50px; 
+    .timeline ul li::before {
+        left: 4px;
     }
-    
-    .timeline ul li:nth-child(odd):before
-      {
-      top:-18px;
-      left:16px;
-    
+    .left_content {
+        margin-left: 20px; /* Reducir el margen en pantallas pequeñas */
+        max-width: 90%;
     }
-    .timeline ul li:nth-child(even):before
-    { 
-      top:-18px;
-      left:16px;
-    }
-    
-      .timeline ul li:nth-child(odd) .left_content,
-    .timeline ul li:nth-child(even) .left_content
-    {
-      top:-30px;
-      left:50px;
-      right:inherit;
-    }
-  
-    
-  }
+}
