@@ -1,11 +1,4 @@
-*{
-    margin:0;
-    padding:0;
-    font-family: 'Roboto', sans-serif;
-    background:#1d1e22;
-    color:#fff;
-   z-index:0;
-  }
+
   
   .timeline:before {
     content: '';
