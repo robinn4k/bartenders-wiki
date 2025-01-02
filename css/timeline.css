@@ -43,7 +43,7 @@
     color:rgba(59,112,239,1);
     padding:0px 2px 18px 0px;
   }
-  .timeline ul li:nth-child(odd){
+  /*.timeline ul li:nth-child(odd){
     float:left;
     text-align:right;
     clear:both;
@@ -53,7 +53,7 @@
     float:right;
     text-align:left;
     clear:both;
-  }
+  }*/
   
   .left_content{
     padding-bottom:20px;
