@@ -36,12 +36,7 @@ body {
 /*==========================================================================
    NAVEGACIÓN (NAV)
    ========================================================================== */
-   .sticky-header {
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    background-color: #181818e6;
-  }
+  
   .sticky-nav {
     position: sticky;
     top: 0;
