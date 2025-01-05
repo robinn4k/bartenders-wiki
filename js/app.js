@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   console.debug('DEBUG: DOMContentLoaded - Iniciando script principal.');
 
   /***********************************************
-   * A) Navegación de “páginas” (Home, Historia, etc.)
+   * Manejo de navegación interna
    ***********************************************/
   document.querySelectorAll('.show-page').forEach(button => {
     button.addEventListener('click', () => {
@@ -11,13 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       const target = button.getAttribute('data-target');
-      
-      // Ocultamos todas las .page
+
+      // Ocultar todas las .page
       document.querySelectorAll('.page').forEach(page => {
         page.classList.remove('active');
       });
 
-      // Mostramos solo la .page requerida
+      // Mostrar la página requerida
       const pageToShow = document.getElementById(target);
       if (pageToShow) {
         pageToShow.classList.add('active');
@@ -28,17 +28,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Opción B: Forzar recarga si se hace clic en la versión
-  const versionText = document.getElementById('version-text');
-  if (versionText) {
-    versionText.addEventListener('click', () => {
-      console.debug('DEBUG: Pulsado texto de versión. Recargando página...');
-      window.location.reload();
-    });
-  }
+  /***********************************************
+   * Manejo del menú hamburguesa
+   ***********************************************/
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    console.debug('DEBUG: Menú hamburguesa activado.');
+  });
 
   /***********************************************
-   * B) Cargar datos de cócteles (cocteles.json)
+   * Cargar datos de cócteles (cocteles.json)
    ***********************************************/
   console.debug('DEBUG: Iniciando fetch a cocteles.json...');
   fetch('cocteles.json')
@@ -122,5 +124,3 @@ function mostrarDetallesCoctel(coctel) {
 
   console.debug(`DEBUG: Mostrados detalles del cóctel: ${coctel.nombre}`);
 }
-
-
