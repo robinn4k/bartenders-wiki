@@ -1,0 +1,22 @@
+/* ========================================================================== 
+   COMPONENTES ESPECÍFICOS (Ej: Lista de Cócteles)
+   ========================================================================== */
+   .cocteles-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.coctel-item {
+    border: 1px solid #ffc800;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.coctel-item:hover {
+    background-color: #ffc800;
+    color: #121212;
+}
