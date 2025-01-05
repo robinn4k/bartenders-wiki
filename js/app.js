@@ -39,6 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
     console.debug('DEBUG: Menú hamburguesa activado.');
   });
 
+  // Cerrar el menú al hacer clic en un enlace
+const navLinkItems = document.querySelectorAll('.nav-links a');
+navLinkItems.forEach(link => {
+  link.addEventListener('click', () => {
+    if (navLinks.classList.contains('active')) {
+      navLinks.classList.remove('active');
+      console.debug('DEBUG: Menú hamburguesa cerrado al hacer clic en un enlace.');
+    }
+  });
+});
   /***********************************************
    * Cargar datos de cócteles (cocteles.json)
    ***********************************************/

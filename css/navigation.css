@@ -20,6 +20,10 @@
     list-style: none;
     display: flex;
     gap: 1.5rem;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    text-align: center; /* Asegura que el texto de los enlaces esté centrado */
+    flex: 1; /* Permite que ocupe todo el espacio disponible */
 }
 
 .nav-links a {
@@ -27,6 +31,8 @@
     color: #f5f5f5;
     font-weight: 500;
     transition: color 0.3s ease;
+    display: inline-block; /* Asegura un comportamiento similar al bloque */
+    text-align: center; /* Centra el texto dentro del enlace */
 }
 
 .nav-links a:hover {
