@@ -1,5 +1,10 @@
 {
- "name": "App",
+    "name": "Bartender's Wiki",
+    "short_name": "Wiki",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#333333",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
