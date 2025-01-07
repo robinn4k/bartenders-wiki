@@ -54,7 +54,7 @@
         rgba(0, 0, 0, 0.4), 
         rgba(0, 0, 0, 0.6)
       ),
-      url("https://images.unsplash.com/photo-1530001125043-e2f26ba3617a?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1920") center/cover no-repeat;
+      url("img/background.jpg") center/cover no-repeat;
     background-attachment: fixed; 
   }
   
