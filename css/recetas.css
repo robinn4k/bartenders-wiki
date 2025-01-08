@@ -48,7 +48,7 @@
       letter-spacing: 1px; /* Espaciado entre letras */
       font-family: 'Source Sans Pro', sans-serif; /* Tipografía */
       font-size: 0; /* Resetea el tamaño de la fuente para eliminar márgenes indeseados */
-      bottom: 0%; /* Ajusta la posición en la pantalla */
+      bottom: 5%; /* Ajusta la posición en la pantalla */
       z-index: 2; /* Coloca la barra por encima de otros elementos */
       width: 100%; /* Ocupa todo el ancho de la pantalla */
       white-space: nowrap; /* Evita que los elementos se envuelvan */
