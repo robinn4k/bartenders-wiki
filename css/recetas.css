@@ -43,41 +43,46 @@
     }
   
     .cocteles-list {
-    flex: 0;
-      display: flex; /* Estilo flex para elementos en fila */
-      flex-direction: row; /* Asegura que los elementos estén en una línea horizontal */
-      overflow-x: auto; /* Habilita el desplazamiento horizontal */
-      max-height: unset; /* Elimina la limitación de altura */
-      gap: 1rem; /* Espaciado entre los elementos */
-      white-space: nowrap; /* Evita el salto de línea */
-      padding: 1rem 0; /* Agrega un padding para un mejor diseño */
-      scroll-behavior: smooth; /* Desplazamiento suave */
-      border-bottom: 2px solid #ffc800; /* Línea decorativa */
-    }
+      position: fixed; /* Fija la barra en su lugar */
+      background-color: #282A35; /* Fondo oscuro */
+      color: #f1f1f1; /* Texto claro */
+      padding: 0.5rem 0; /* Espaciado interno */
+      letter-spacing: 1px; /* Espaciado entre letras */
+      font-family: 'Source Sans Pro', sans-serif; /* Tipografía */
+      font-size: 0; /* Resetea el tamaño de la fuente para eliminar márgenes indeseados */
+      top: 56px; /* Ajusta la posición en la pantalla */
+      z-index: 2; /* Coloca la barra por encima de otros elementos */
+      width: 100%; /* Ocupa todo el ancho de la pantalla */
+      white-space: nowrap; /* Evita que los elementos se envuelvan */
+      overflow-x: auto; /* Habilita el scroll horizontal */
+      overflow-y: hidden; /* Oculta el scroll vertical */
+      scrollbar-width: none; /* Oculta el scrollbar en navegadores compatibles */
+  }
   
-    .coctel-item {
-      flex: 0 0 auto; /* Los elementos mantienen su tamaño */
-      min-width: 120px; /* Ancho mínimo para cada elemento */
-      text-align: center; /* Centra el texto */
-      border: 1px solid #ffc800; /* Borde decorativo */
-      border-radius: 8px; /* Bordes redondeados */
+  /* Ocultar barra de desplazamiento para navegadores WebKit */
+  .cocteles-list::-webkit-scrollbar {
+      display: none;
+  }
+  
+  /* Estilo para los elementos individuales */
+  .coctel-item {
+      display: inline-block; /* Asegura que estén en línea horizontal */
+      min-width: 120px; /* Ancho mínimo */
       padding: 0.5rem 1rem; /* Espaciado interno */
+      margin: 0 0.5rem; /* Espaciado entre elementos */
+      text-align: center; /* Centra el texto */
+      border: 1px solid #ffc800; /* Borde amarillo */
+      border-radius: 8px; /* Bordes redondeados */
       background-color: transparent; /* Fondo transparente */
-      color: #fff; /* Texto blanco */
-      font-size: 14px; /* Tamaño del texto */
-      transition: background-color 0.3s, color 0.3s; /* Animación suave */
-    }
+      color: #f1f1f1; /* Texto claro */
+      font-size: 16px; /* Tamaño del texto */
+      transition: background-color 0.3s, color 0.3s; /* Efecto suave al pasar el mouse */
+  }
   
-    .coctel-item:hover {
-      background-color: #ffc800; /* Fondo amarillo al pasar el mouse */
+  /* Efecto hover */
+  .coctel-item:hover {
+      background-color: #ffc800; /* Fondo amarillo */
       color: #000; /* Texto negro */
-    }
-  
-    .coctel-detalles {
-      margin-top: 1rem; /* Espaciado entre la lista y los detalles */
-      padding: 1rem;
-      color: #fff; /* Asegura que el texto sea visible */
-      text-align: center;
-    }
+  }
   }
   
