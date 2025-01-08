@@ -43,6 +43,7 @@
     }
   
     .cocteles-list {
+    flex: 0;
       display: flex; /* Estilo flex para elementos en fila */
       flex-direction: row; /* Asegura que los elementos estén en una línea horizontal */
       overflow-x: auto; /* Habilita el desplazamiento horizontal */
