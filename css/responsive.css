@@ -15,9 +15,6 @@
         padding: 1.5rem;
     }
 
-    .cocteles-container {
-        flex-direction: column;
-    }
 
     .sticky-nav ul {
         flex-direction: column;
@@ -29,11 +26,36 @@
         text-align: center;
     }
 
-    .cocteles-container {
-        flex-direction: column;
-    }
-
     .logo {
         max-width: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+ 
+    .cocteles-list {
+        flex: none;
+        display: flex;
+        overflow-x: auto;
+        flex-direction: row;
+        max-height: unset;
+        border-right: none;
+        border-bottom: 1px solid #ffc800;
+        padding-bottom: 0.5rem;
+    }
+
+    .coctel-item {
+        margin: 0.5rem;
+        padding: 0.3rem;
+        cursor: pointer;
+        border: 1px solid #ffc800;
+        border-radius: 4px;
+        text-align: center;
+        transition: background-color 0.2s;
+    }
+
+    .coctel-item:hover {
+        background-color: #ffc800;
+        color: #2b2b2b;
     }
 }
