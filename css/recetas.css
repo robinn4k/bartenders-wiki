@@ -44,13 +44,11 @@
   
     .cocteles-list {
       position: fixed; /* Fija la barra en su lugar */
-      background-color: #282A35; /* Fondo oscuro */
-      color: #f1f1f1; /* Texto claro */
       padding: 0.5rem 0; /* Espaciado interno */
       letter-spacing: 1px; /* Espaciado entre letras */
       font-family: 'Source Sans Pro', sans-serif; /* Tipografía */
       font-size: 0; /* Resetea el tamaño de la fuente para eliminar márgenes indeseados */
-      top: 56px; /* Ajusta la posición en la pantalla */
+      bottom: 0%; /* Ajusta la posición en la pantalla */
       z-index: 2; /* Coloca la barra por encima de otros elementos */
       width: 100%; /* Ocupa todo el ancho de la pantalla */
       white-space: nowrap; /* Evita que los elementos se envuelvan */

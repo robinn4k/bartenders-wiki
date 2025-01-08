@@ -128,8 +128,10 @@ function mostrarDetallesCoctel(coctel) {
   detallesDiv.innerHTML = `
     <h3>${coctel.nombre}</h3>
     <img src="${coctel.imagen}" alt="${coctel.nombre}" style="max-width: 200px;" />
+    <p><strong>Descripción:</strong>${coctel.descripcion}</p>
+    <p><strong>Ingredientes:</strong>${coctel.ingredientes}</p>
     <p><strong>Método:</strong> ${coctel.metodo}</p>
-    <p>${coctel.descripcion}</p>
+    <p><strong>Decoración:</strong>${coctel.decoracion}</p>
   `;
 
   console.debug(`DEBUG: Mostrados detalles del cóctel: ${coctel.nombre}`);
