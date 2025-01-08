@@ -1,109 +1,181 @@
 {
-    "cocteles": [
-      {
-        "id": "margarita",
-        "nombre": "Margarita",
-        "imagen": "img/coctel.jpg",
-        "metodo": "Shake tequila, triple sec y jugo de limón con hielo.",
-        "descripcion": "El Margarita es un cóctel mexicano clásico..."
-      },
-      {
-        "id": "mojito",
-        "nombre": "Mojito",
-        "imagen": "img/mojito.jpg",
-        "metodo": "Macerar hojas de menta y azúcar, añadir ron y soda.",
-        "descripcion": "Tradicional de Cuba, fresco y aromático..."
-      },
-      {
-        "id": "martini",
-        "nombre": "Martini",
-        "imagen": "img/martini.jpg",
-        "metodo": "Agitar o remover ginebra con vermouth, luego colar.",
-        "descripcion": "Uno de los cócteles más famosos y elegantes..."
-      },
-      {
-        "id": "margarita",
-        "nombre": "Margarita",
-        "imagen": "img/margarita.jpg",
-        "metodo": "Shake tequila, triple sec y jugo de limón con hielo.",
-        "descripcion": "El Margarita es un cóctel mexicano clásico..."
-      },
-      {
-        "id": "mojito",
-        "nombre": "Mojito",
-        "imagen": "img/mojito.jpg",
-        "metodo": "Macerar hojas de menta y azúcar, añadir ron y soda.",
-        "descripcion": "Tradicional de Cuba, fresco y aromático..."
-      },
-      {
-        "id": "martini",
-        "nombre": "Martini",
-        "imagen": "img/martini.jpg",
-        "metodo": "Agitar o remover ginebra con vermouth, luego colar.",
-        "descripcion": "Uno de los cócteles más famosos y elegantes..."
-      },
-      {
-        "id": "margarita",
-        "nombre": "Margarita",
-        "imagen": "img/margarita.jpg",
-        "metodo": "Shake tequila, triple sec y jugo de limón con hielo.",
-        "descripcion": "El Margarita es un cóctel mexicano clásico..."
-      },
-      {
-        "id": "mojito",
-        "nombre": "Mojito",
-        "imagen": "img/mojito.jpg",
-        "metodo": "Macerar hojas de menta y azúcar, añadir ron y soda.",
-        "descripcion": "Tradicional de Cuba, fresco y aromático..."
-      },
-      {
-        "id": "martini",
-        "nombre": "Martini",
-        "imagen": "img/martini.jpg",
-        "metodo": "Agitar o remover ginebra con vermouth, luego colar.",
-        "descripcion": "Uno de los cócteles más famosos y elegantes..."
-      },
-      {
-        "id": "margarita",
-        "nombre": "Margarita",
-        "imagen": "img/margarita.jpg",
-        "metodo": "Shake tequila, triple sec y jugo de limón con hielo.",
-        "descripcion": "El Margarita es un cóctel mexicano clásico..."
-      },
-      {
-        "id": "mojito",
-        "nombre": "Mojito",
-        "imagen": "img/mojito.jpg",
-        "metodo": "Macerar hojas de menta y azúcar, añadir ron y soda.",
-        "descripcion": "Tradicional de Cuba, fresco y aromático..."
-      },
-      {
-        "id": "martini",
-        "nombre": "Martini",
-        "imagen": "img/martini.jpg",
-        "metodo": "Agitar o remover ginebra con vermouth, luego colar.",
-        "descripcion": "Uno de los cócteles más famosos y elegantes..."
-      },{
-        "id": "margarita",
-        "nombre": "Margarita",
-        "imagen": "img/margarita.jpg",
-        "metodo": "Shake tequila, triple sec y jugo de limón con hielo.",
-        "descripcion": "El Margarita es un cóctel mexicano clásico..."
-      },
-      {
-        "id": "mojito",
-        "nombre": "Mojito",
-        "imagen": "img/mojito.jpg",
-        "metodo": "Macerar hojas de menta y azúcar, añadir ron y soda.",
-        "descripcion": "Tradicional de Cuba, fresco y aromático..."
-      },
-      {
-        "id": "martini",
-        "nombre": "Martini",
-        "imagen": "img/martini.jpg",
-        "metodo": "Agitar o remover ginebra con vermouth, luego colar.",
-        "descripcion": "Uno de los cócteles más famosos y elegantes..."
-      }
-    ]
-  }
-  
+  "cocteles": [
+    {
+      "id": "margarita",
+      "nombre": "Margarita",
+      "imagen": "img/margarita.jpg",
+      "metodo": "Agrega todos los ingredientes en una coctelera con hielo. Agita y cuela en una copa de cóctel fría.",
+      "descripcion": "El Margarita es un cóctel mexicano clásico que combina tequila, triple sec y jugo de limón.",
+      "ingredientes": [
+        "50 ml Tequila 100% Agave",
+        "20 ml Triple Sec",
+        "15 ml Jugo de Lima Fresco"
+      ],
+      "decoracion": "Borde de sal (opcional)"
+    },
+    {
+      "id": "mojito",
+      "nombre": "Mojito",
+      "imagen": "img/mojito.jpg",
+      "metodo": "Mezcla la menta con azúcar y jugo de lima. Añade un poco de soda y hielo. Incorpora el ron y termina con más soda.",
+      "descripcion": "El Mojito, originario de Cuba, es una bebida fresca y aromática.",
+      "ingredientes": [
+        "45 ml Ron Blanco Cubano",
+        "20 ml Jugo de Lima Fresco",
+        "6 Ramas de Menta",
+        "2 Cucharaditas de Azúcar de Caña",
+        "Soda"
+      ],
+      "decoracion": "Ramas de menta y una rodaja de lima"
+    },
+    {
+      "id": "martini",
+      "nombre": "Dry Martini",
+      "imagen": "img/martini.jpg",
+      "metodo": "Vierte todos los ingredientes en un vaso mezclador con hielo. Remueve bien y cuela en una copa de martini fría.",
+      "descripcion": "Uno de los cócteles más icónicos, conocido por su elegancia y sencillez.",
+      "ingredientes": [
+        "60 ml Ginebra",
+        "10 ml Vermouth Seco"
+      ],
+      "decoracion": "Aceituna verde o piel de limón"
+    },
+    {
+      "id": "piña_colada",
+      "nombre": "Piña Colada",
+      "imagen": "img/pina_colada.jpg",
+      "metodo": "Mezcla todos los ingredientes en una licuadora con hielo y sirve en un vaso alto.",
+      "descripcion": "Un clásico tropical dulce y refrescante.",
+      "ingredientes": [
+        "50 ml Ron Blanco",
+        "30 ml Crema de Coco",
+        "50 ml Jugo de Piña Fresco"
+      ],
+      "decoracion": "Rodaja de piña y cereza"
+    },
+    {
+      "id": "negroni",
+      "nombre": "Negroni",
+      "imagen": "img/negroni.jpg",
+      "metodo": "Combina los ingredientes directamente en un vaso bajo con hielo y remueve suavemente.",
+      "descripcion": "Un cóctel italiano fuerte y equilibrado.",
+      "ingredientes": [
+        "30 ml Ginebra",
+        "30 ml Campari",
+        "30 ml Vermouth Dulce"
+      ],
+      "decoracion": "Media rodaja de naranja"
+    },
+    {
+      "id": "old_fashioned",
+      "nombre": "Old Fashioned",
+      "imagen": "img/old_fashioned.jpg",
+      "metodo": "Coloca un terrón de azúcar en un vaso bajo y mójalo con amargos y un poco de agua. Machaqua hasta disolver el azúcar. Agrega hielo y vierte el whisky. Remueve suavemente.",
+      "descripcion": "Un cóctel clásico americano, simple pero lleno de sabor.",
+      "ingredientes": [
+        "45 ml Bourbon o Whisky de Centeno",
+        "1 Terrón de Azúcar",
+        "2-3 Gotas de Amargo de Angostura",
+        "Unas gotas de agua"
+      ],
+      "decoracion": "Cáscara de naranja y una cereza"
+    },
+    {
+      "id": "cosmopolitan",
+      "nombre": "Cosmopolitan",
+      "imagen": "img/cosmopolitan.jpg",
+      "metodo": "Añade todos los ingredientes en una coctelera con hielo. Agita bien y cuela en una copa de cóctel fría.",
+      "descripcion": "Famoso gracias a la cultura pop, el Cosmopolitan es un cóctel elegante y refrescante.",
+      "ingredientes": [
+        "40 ml Vodka Citron",
+        "15 ml Cointreau",
+        "15 ml Jugo de Lima Fresco",
+        "30 ml Jugo de Arándanos"
+      ],
+      "decoracion": "Twist de limón"
+    },
+    {
+      "id": "espresso_martini",
+      "nombre": "Espresso Martini",
+      "imagen": "img/espresso_martini.jpg",
+      "metodo": "Combina todos los ingredientes en una coctelera con hielo. Agita vigorosamente y cuela en una copa de cóctel fría.",
+      "descripcion": "El Espresso Martini es un cóctel ideal para los amantes del café, sofisticado y estimulante.",
+      "ingredientes": [
+        "50 ml Vodka",
+        "30 ml Licor de Café",
+        "10 ml Jarabe de Azúcar",
+        "1 Espresso Fuerte"
+      ],
+      "decoracion": "Granos de café"
+    },
+    {
+      "id": "gin_fizz",
+      "nombre": "Gin Fizz",
+      "imagen": "img/gin_fizz.jpg",
+      "metodo": "Agita todos los ingredientes excepto el agua con gas en una coctelera con hielo. Cuela en un vaso alto y añade un toque de agua con gas.",
+      "descripcion": "Un cóctel burbujeante y refrescante, ideal para cualquier ocasión.",
+      "ingredientes": [
+        "45 ml Ginebra",
+        "30 ml Jugo de Limón Fresco",
+        "10 ml Jarabe de Azúcar",
+        "Un toque de Soda"
+      ],
+      "decoracion": "Rodaja de limón"
+    },
+    {
+      "id": "bellini",
+      "nombre": "Bellini",
+      "imagen": "img/bellini.jpg",
+      "metodo": "Vierte el puré de durazno en una copa de champagne fría y añade Prosecco lentamente. Remueve suavemente.",
+      "descripcion": "Un cóctel espumoso italiano, perfecto para celebraciones.",
+      "ingredientes": [
+        "100 ml Prosecco",
+        "50 ml Puré de Durazno Blanco"
+      ],
+      "decoracion": "Ninguna"
+    },
+    {
+      "id": "pisco_sour",
+      "nombre": "Pisco Sour",
+      "imagen": "img/pisco_sour.jpg",
+      "metodo": "Combina todos los ingredientes en una coctelera con hielo. Agita vigorosamente y cuela en una copa de cóctel.",
+      "descripcion": "Un cóctel sudamericano icónico, con un equilibrio perfecto entre dulce y ácido.",
+      "ingredientes": [
+        "60 ml Pisco",
+        "30 ml Jugo de Limón Fresco",
+        "20 ml Jarabe Simple",
+        "1 Clara de Huevo"
+      ],
+      "decoracion": "Gotas de Amargo Aromático"
+    },
+    {
+      "id": "hurricane",
+      "nombre": "Hurricane",
+      "imagen": "img/hurricane.jpg",
+      "metodo": "Mezcla todos los ingredientes en una coctelera con hielo. Sirve en un vaso grande sin colar.",
+      "descripcion": "Un cóctel tropical originario de Nueva Orleans, lleno de sabor y color.",
+      "ingredientes": [
+        "50 ml Ron Blanco",
+        "50 ml Ron Oscuro",
+        "25 ml Jugo de Maracuyá",
+        "25 ml Jugo de Naranja",
+        "10 ml Jarabe de Azúcar",
+        "10 ml Granadina"
+      ],
+      "decoracion": "Rodaja de naranja y cereza"
+    },
+    {
+      "id": "negroni_sbagliato",
+      "nombre": "Negroni Sbagliato",
+      "imagen": "img/negroni_sbagliato.jpg",
+      "metodo": "Mezcla directamente en un vaso bajo con hielo. Remueve suavemente.",
+      "descripcion": "Una versión más ligera del clásico Negroni, con prosecco en lugar de ginebra.",
+      "ingredientes": [
+        "30 ml Campari",
+        "30 ml Vermouth Dulce",
+        "30 ml Prosecco"
+      ],
+      "decoracion": "Media rodaja de naranja"
+    }
+  ]
+}
