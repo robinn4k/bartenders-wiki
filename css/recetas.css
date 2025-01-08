@@ -37,7 +37,7 @@
 /* Estilos para dispositivos móviles */
 @media (max-width: 768px) {
     .cocteles-container {
-        flex-direction: column; /* Cambia a disposición vertical */
+        flex-direction: 0; /* Cambia a disposición vertical */
         height: 100%; /* Permite que el contenedor ocupe toda la pantalla */
     }
 
