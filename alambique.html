@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alambique 3D</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0; /* Elimina márgenes predeterminados del body */
+            display: flex; /* Usa flexbox para centrar el contenido */
+            flex-direction: column; /* Alinea los elementos verticalmente */
+            align-items: center; /* Centra horizontalmente */
+            min-height: 100vh; /* Asegura que el body ocupe toda la altura de la pantalla */
+            background-color: #f0f0f0; /* Un fondo gris claro para mejor contraste */
+        }
+        model-viewer {
+            width: 80%; /* Ocupa el 80% del ancho disponible */
+            max-width: 800px; /* Ancho máximo para evitar que se vea demasiado grande en pantallas grandes */
+            height: 600px; /* Altura fija para el visor 3D */
+            margin-top: 20px; /* Margen superior para separarlo del título */
+        }
+        .HotspotAnnotation {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para mejor visibilidad */
+            transition: background-color 0.3s ease; /* Transición suave para el hover */
+        }
+        .HotspotAnnotation:hover {
+            background-color: rgba(200, 200, 200, 0.9);
+        }
+        #info-panel {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+            text-align: center; /* Centra el texto dentro del panel */
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1{
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Modelo 3D de un Alambique</h1>
+
+    <model-viewer
+        src="alambique.glb"
+        alt="Modelo 3D de un alambique"
+        auto-rotate
+        camera-controls
+        shadow-intensity="1">
+
+        <div slot="hotspot-caldera" data-position="-0.5 0.2 0" data-normal="1 0 0">
+            <button class="HotspotAnnotation" data-info="Recipiente principal donde se calienta el líquido.">Caldera</button>
+        </div>
+        <div slot="hotspot-condensador" data-position="0.5 0 -0.2" data-normal="0 0 -1">
+            <button class="HotspotAnnotation" data-info="Enfría los vapores para convertirlos en líquido.">Condensador</button>
+        </div>
+        <div slot="hotspot-cuello" data-position="0 0.4 0" data-normal="0 1 0">
+            <button class="HotspotAnnotation" data-info="Conecta la caldera con el condensador.">Cuello de Cisne</button>
+        </div>
+
+    </model-viewer>
+
+    <div id="info-panel">Haz clic en una parte del alambique para obtener más información.</div>
+
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/v1.13.0/model-viewer.min.js"></script>
+    <script>
+        const hotspots = document.querySelectorAll('.HotspotAnnotation');
+        const infoPanel = document.getElementById('info-panel');
+
+        hotspots.forEach(hotspot => {
+            hotspot.addEventListener('click', () => {
+                infoPanel.textContent = hotspot.dataset.info;
+            });
+        });
+    </script>
+</body>
+</html>
