@@ -96,7 +96,7 @@ h1 {
 
     <model-viewer
         src="alambique.glb"
-        alt="Modelo 3D de un alambique"
+        alt="Modelo 3D interactivo de un alambique. Permite rotar y observar en detalle las partes del alambique utilizadas en la destilación."
         auto-rotate
         camera-controls
         shadow-intensity="1">
@@ -110,6 +110,19 @@ h1 {
         <div slot="hotspot-cuello" data-position="0 0.4 0" data-normal="0 1 0">
             <button class="HotspotAnnotation" data-info="Conecta la caldera con el condensador.">Cuello de Cisne</button>
         </div>
+        <div slot="hotspot-capitel" data-position="0 -0.5 0" data-normal="1 0 0">
+            <button class="HotspotAnnotation" data-info="Es la parte superior de la caldera, que recoge los vapores producidos por la ebullición del líquido. En la imagen, tiene una forma cónica que se estrecha hacia arriba.">Capitel</button>
+        </div>
+        <div slot="hotspot-refrigerante" data-position="0 -0.6 0" data-normal="0 0 -1">
+            <button class="HotspotAnnotation" data-info="Es el recipiente que contiene el agua fría que enfría el serpentín. En la fotografía, es el cilindro vertical que contiene el serpentín. A menudo tiene una toma o grifo para el drenaje o la renovación del agua de refrigeración. Se aprecia un pequeño grifo en la parte inferior del refrigerante.">Recipiente de Refrigeración</button>
+        </div>
+        <div slot="hotspot-soporte_caldera" data-position="0 -0.7 0" data-normal="0 1 0">
+            <button class="HotspotAnnotation" data-info="Es la estructura que sostiene la caldera sobre la fuente de calor. En la imagen, se ve un soporte metálico con tres patas que eleva la caldera.">Soporte de la Caldera</button>
+        </div>
+        <div slot="hotspot-calentador" data-position="0 -0.8 0" data-normal="1 0 0">
+            <button class="HotspotAnnotation" data-info="Este recipiente podría ser parte del sistema de calentamiento (para contener una llama o resistencia) o un precalentador.">Calentador</button>
+        </div>
+        
 
     </model-viewer>
 
