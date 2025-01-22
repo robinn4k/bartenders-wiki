@@ -3,134 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alambique 3D 1.2</title>
+    <title>Alambique 3D 1.2.1</title>
     <style>
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f0f0f0;
-            padding: 20px; /* Añadido padding al body para mejor espaciado en móviles */
-        }
+       body {
+    font-family: sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    padding: 20px; /* Espacio alrededor del contenido en pantallas pequeñas */
+    box-sizing: border-box; /* Para que el padding no afecte al ancho total */
+}
 
-        #contenedor-modelo { /* Contenedor para el modelo y los controles */
-            display: flex;
-            flex-direction: column; /* Apila el modelo y los controles verticalmente */
-            align-items: center;
-            width: 90%; /* Ancho para el contenedor */
-            max-width: 900px;
-        }
+#contenedor-modelo { /* Contenedor para el modelo y controles */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%; /* Ocupa casi todo el ancho disponible */
+    max-width: 900px; /* Ancho máximo en pantallas grandes */
+    margin: 20px auto; /* Centra el contenedor horizontalmente */
+}
 
-        model-viewer {
-            width: 100%; /* El modelo ocupa todo el ancho del contenedor */
-            height: 50vh; /* Altura relativa al viewport height */
-            max-height: 600px;
-            margin-bottom: 20px;
-        }
+model-viewer {
+    width: 100%; /* Ocupa el 100% del ancho del contenedor */
+    height: 60vh; /* Altura relativa al viewport height (60% de la altura de la pantalla) */
+    max-height: 600px;
+    margin-bottom: 20px;
+}
 
-        .controles-posicion {
-            display: flex;
-            justify-content: space-around; /* Distribuye los controles horizontalmente */
-            width: 100%;
-            margin-bottom: 20px;
-        }
+.HotspotAnnotation {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
 
-        .controles-posicion label, .controles-posicion input {
-            margin: 5px;
-        }
-        #info-panel {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: white;
-            text-align: center;
-            width: 100%; /* Ocupa todo el ancho del contenedor */
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-            box-sizing: border-box; /* Incluye el padding y el border en el ancho */
-        }
-        h1{
-            margin-top: 0;
-            margin-bottom: 20px;
-            text-align: center;
-        }
+.HotspotAnnotation:hover {
+    background-color: rgba(200, 200, 200, 0.9);
+}
 
-        /* Diseño responsive */
-        @media (max-width: 768px) {
-            .controles-posicion {
-                flex-direction: column; /* Apila los controles verticalmente en pantallas pequeñas */
-                align-items: center;
-            }
-            model-viewer{
-                height: 40vh;
-            }
-        }
+#info-panel {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Media Queries para diferentes tamaños de pantalla */
+@media (max-width: 768px) { /* Estilos para pantallas pequeñas (móviles) */
+    model-viewer {
+        height: 40vh; /* Reduce la altura en móviles */
+    }
+
+    .HotspotAnnotation {
+        font-size: 0.8em; /* Reduce el tamaño de la fuente de los hotspots */
+        padding: 5px 8px;
+    }
+}
+
+@media (max-width: 480px) { /* Estilos para pantallas muy pequeñas */
+    h1 {
+        font-size: 1.5em; /* Reduce el tamaño del título */
+    }
+}
+
+/* Estilos para pantallas más grandes (opcional) */
+@media (min-width: 1200px) {
+    model-viewer {
+        height: 70vh; /* Aumenta la altura en pantallas grandes */
+    }
+}
+
     </style>
 </head>
 <body>
     <h1>Modelo 3D de un Alambique</h1>
 
-    <div id="contenedor-modelo">
-        <div class="controles-posicion">
-            <div>
-                <label for="posX">Posición X:</label>
-                <input type="number" id="posX" value="0" step="0.1">
-            </div>
-            <div>
-                <label for="posY">Posición Y:</label>
-                <input type="number" id="posY" value="0" step="0.1">
-            </div>
-            <div>
-                <label for="posZ">Posición Z:</label>
-                <input type="number" id="posZ" value="0" step="0.1">
-            </div>
+    <model-viewer
+        src="alambique.glb"
+        alt="Modelo 3D de un alambique"
+        auto-rotate
+        camera-controls
+        shadow-intensity="1">
+
+        <div slot="hotspot-caldera" data-position="0 -0.4 0" data-normal="1 0 0">
+            <button class="HotspotAnnotation" data-info="Recipiente principal donde se calienta el líquido.">Caldera</button>
+        </div>
+        <div slot="hotspot-condensador" data-position="0 0 -0.5" data-normal="0 0 -1">
+            <button class="HotspotAnnotation" data-info="Enfría los vapores para convertirlos en líquido.">Condensador</button>
+        </div>
+        <div slot="hotspot-cuello" data-position="0 0.4 0" data-normal="0 1 0">
+            <button class="HotspotAnnotation" data-info="Conecta la caldera con el condensador.">Cuello de Cisne</button>
         </div>
 
-        <model-viewer id="modelViewer" src="alambique.glb" alt="Modelo 3D de un alambique" auto-rotate camera-controls shadow-intensity="1">
-            <div slot="hotspot-caldera" data-position="-0.5 0.4 0" data-normal="1 0 0">
-                <button class="HotspotAnnotation" data-info="Recipiente principal donde se calienta el líquido.">Caldera</button>
-            </div>
-            <div slot="hotspot-condensador" data-position="0.5 0 -0.5" data-normal="0 0 -1">
-                <button class="HotspotAnnotation" data-info="Enfría los vapores para convertirlos en líquido.">Condensador</button>
-            </div>
-            <div slot="hotspot-cuello" data-position="0 0.4 0" data-normal="0 1 0">
-                <button class="HotspotAnnotation" data-info="Conecta la caldera con el condensador.">Cuello de Cisne</button>
-            </div>
-        </model-viewer>
+    </model-viewer>
 
-        <div id="info-panel">Haz clic en una parte del alambique para obtener más información.</div>
-    </div>
+    <div id="info-panel">Haz clic en una parte del alambique para obtener más información.</div>
 
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/v1.13.0/model-viewer.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js"></script>
     <script>
-        const modelViewer = document.getElementById('modelViewer');
-        const posXInput = document.getElementById('posX');
-        const posYInput = document.getElementById('posY');
-        const posZInput = document.getElementById('posZ');
         const hotspots = document.querySelectorAll('.HotspotAnnotation');
         const infoPanel = document.getElementById('info-panel');
-
-        function updateModelPosition() {
-            const x = parseFloat(posXInput.value);
-            const y = parseFloat(posYInput.value);
-            const z = parseFloat(posZInput.value);
-
-            modelViewer.style.transform = `translate3d(${x}m, ${y}m, ${z}m)`;
-        }
-
-        posXInput.addEventListener('input', updateModelPosition);
-        posYInput.addEventListener('input', updateModelPosition);
-        posZInput.addEventListener('input', updateModelPosition);
 
         hotspots.forEach(hotspot => {
             hotspot.addEventListener('click', () => {
                 infoPanel.textContent = hotspot.dataset.info;
             });
         });
-
     </script>
 </body>
 </html>
