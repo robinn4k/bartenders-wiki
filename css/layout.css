@@ -38,7 +38,48 @@ header {
     cursor: pointer;
 }
 
+/* Estilos generales de la sección home */
+.home-section {
+    /* ... otros estilos que ya tengas ... */
+    padding: 20px; /* Espacio interno para la sección */
+}
 
+.home-header {
+    text-align: center; /* Centra el título */
+    margin-bottom: 20px;
+}
+
+.home-body {
+    max-width: 800px; /* Ancho máximo para el contenido */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
+}
+
+.home-text {
+    margin-bottom: 10px; /* Espacio entre párrafos */
+    line-height: 1.5; /* Mejora la legibilidad */
+}
+/* Estilos para los textos en cuadrado */
+.home-text-container {
+    display: flex; /* Utiliza flexbox para la disposición en fila */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a varias líneas */
+    justify-content: space-around; /* Distribuye los elementos equitativamente */
+    margin-bottom: 20px;
+}
+.home-text-boxed {
+    border: 2px solid #333; /* Borde sólido */
+    padding: 10px; /* Espacio interno dentro del cuadrado */
+    margin: 10px; /* Espacio entre los cuadrados */
+    border-radius: 5px; /* Bordes redondeados */
+    text-align: center; /* Centra el texto dentro del cuadrado */
+    flex: 1 0 200px; /* Ancho mínimo de 200px y crecen si hay espacio */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+
+.home-version {
+    text-align: center;
+    font-size: smaller;
+    color: gray;
+}
 
 
 
