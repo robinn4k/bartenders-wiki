@@ -38,7 +38,10 @@
 .nav-links a:hover {
     color: #ffcc00;
 }
-
+nav ul {
+    
+    padding-bottom: 15px;
+}
 /* Media queries para la navegación */
 @media (max-width: 768px) {
     .nav-links {
