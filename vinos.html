@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Variedades de Uva</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2; /* Gris claro para encabezados */
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9; /* Gris muy claro para filas pares */
+        }
+
+        /* Estilos específicos para mejorar la legibilidad en pantallas más pequeñas */
+        @media (max-width: 800px) {
+            table {
+                font-size: 12px; /* Reducir tamaño de fuente */
+            }
+            th, td {
+                padding: 6px; /* Reducir padding */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <thead>
+          <tr>
+            <th>Variedad de Uva</th>
+            <th>Origen Principal</th>
+            <th>Color del Vino</th>
+            <th>Perfil de Sabor Principal</th>
+            <th>Cuerpo</th>
+            <th>Taninos</th>
+            <th>Acidez</th>
+            <th>Azúcar Residual</th>
+            <th>Estilo de Vino Común</th>
+            <th>Maridaje Sugerido</th>
+            <th>Regiones Clave</th>
+            <th>Envejecimiento</th>
+            <th>Otras Características</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cabernet Sauvignon</td>
+            <td>Burdeos, Francia</td>
+            <td>Tinto</td>
+            <td>Frutos negros, especias, tabaco</td>
+            <td>Cuerpo completo</td>
+            <td>Altos</td>
+            <td>Media</td>
+            <td>Bajo</td>
+            <td>Tinto seco, Bordeaux Blend</td>
+            <td>Carnes rojas, quesos curados</td>
+            <td>Bordeaux, Napa Valley, Chile</td>
+            <td>Excelente</td>
+            <td>Buena estructura, taninos robustos</td>
+          </tr>
+          <tr>
+            <td>Pinot Noir</td>
+            <td>Borgoña, Francia</td>
+            <td>Tinto</td>
+            <td>Cereza, frambuesa, tierra</td>
+            <td>Cuerpo ligero-medio</td>
+            <td>Bajos-medios</td>
+            <td>Alta</td>
+            <td>Bajo</td>
+            <td>Pinot Noir, Borgoña</td>
+            <td>Aves, salmón, hongos</td>
+            <td>Borgoña, Nueva Zelanda</td>
+            <td>Variable</td>
+            <td>Elegancia, aromas florales</td>
+          </tr>
+          <tr>
+            <td>Merlot</td>
+            <td>Burdeos, Francia</td>
+            <td>Tinto</td>
+            <td>Cereza, ciruela, chocolate</td>
+            <td>Cuerpo medio</td>
+            <td>Medios</td>
+            <td>Media</td>
+            <td>Bajo</td>
+            <td>Merlot, Bordeaux Blend</td>
+            <td>Carnes rojas, pasta</td>
+            <td>Bordeaux, Estados Unidos</td>
+            <td>Bueno</td>
+            <td>Suave, fácil de beber</td>
+          </tr>
+          <tr>
+            <td>Syrah/Shiraz</td>
+            <td>Valle del Rhône, Francia</td>
+            <td>Tinto</td>
+            <td>Pimienta negra, mora, humo</td>
+            <td>Cuerpo completo</td>
+            <td>Altos</td>
+            <td>Media</td>
+            <td>Bajo</td>
+            <td>Syrah, Shiraz</td>
+            <td>Carnes a la parrilla, caza, comida especiada</td>
+            <td>Rhône, Australia, Valle de Colchagua</td>
+            <td>Excelente</td>
+            <td>Potente, especiado</td>
+          </tr>
+          <tr>
+            <td>Tempranillo</td>
+            <td>Rioja, España</td>
+            <td>Tinto</td>
+            <td>Frutos rojos, cuero, tabaco</td>
+            <td>Medio-completo</td>
+            <td>Medios</td>
+            <td>Alta</td>
+            <td>Bajo</td>
+            <td>Rioja, Ribera del Duero</td>
+            <td>Jamón ibérico, carnes rojas a la parrilla</td>
+            <td>Rioja, Ribera del Duero, Toro</td>
+            <td>Excelente</td>
+            <td>Buena estructura, taninos elegantes</td>
+          </tr>
+          <tr>
+            <td>Garnacha/Grenache</td>
+            <td>Aragón, España</td>
+            <td>Tinto</td>
+            <td>Frutos rojos, especias, notas balsámicas</td>
+            <td>Medio</td>
+            <td>Medios</td>
+            <td>Media</td>
+            <td>Bajo</td>
+            <td>Garnacha, vinos rosados</td>
+            <td>Embutidos, quesos curados, platos especiados</td>
+            <td>España, Francia, Australia</td>
+            <td>Bueno</td>
+            <td>Versátil, ideal para mezclas</td>
+          </tr>
+          <tr>
+            <td>Sangiovese</td>
+            <td>Toscana, Italia</td>
+            <td>Tinto</td>
+            <td>Cereza, cereza ácida, hierbas</td>
+            <td>Medio</td>
+            <td>Medios</td>
+            <td>Alta</td>
+            <td>Bajo</td>
+            <td>Chianti, Brunello di Montalcino</td>
+            <td>Pasta, carnes a la parrilla, quesos</td>
+            <td>Toscana</td>
+            <td>Excelente</td>
+            <td>Buena acidez, estructura</td>
+          </tr>
+          <tr>
+            <td>Malbec</td>
+            <td>Cahors, Francia (popular en Argentina)</td>
+            <td>Tinto</td>
+            <td>Ciruela, mora, violetas</td>
+            <td>Cuerpo completo</td>
+            <td>Medios</td>
+            <td>Media</td>
+            <td>Bajo</td>
+            <td>Malbec</td>
+            <td>Carnes rojas, barbacoa</td>
+            <td>Argentina, Cahors</td>
+            <td>Bueno</td>
+            <td>Taninos suaves, final dulce</td>
+          </tr>
+              <tr>
+            <td>Nebbiolo</td>
+            <td>Piamonte, Italia</td>
+            <td>Tinto</td>
+            <td>Rosa, alquitrán, cereza roja</td>
+            <td>Cuerpo completo</td>
+            <td>Altos</td>
+            <td>Alta</td>
+            <td>Bajo</td>
+            <td>Barolo, Barbaresco</td>
+            <td>Estofados, caza, quesos curados</td>
+            <td>Piamonte</td>
+            <td>Excelente</td>
+            <td>Taninos potentes, alta acidez</td>
+          </tr>
+              <tr>
+            <td>Carménère</td>
+            <td>Burdeos, Francia (popular en Chile)</td>
+            <td>Tinto</td>
+            <td>Pimiento verde, frutos rojos, especias</td>
+            <td>Cuerpo medio</td>
+            <td>Medios</td>
+            <td>Media</td>
+            <td>Bajo</td>
+            <td>Carménère</td>
+            <td>Carnes a la parrilla, platos especiados</td>
+            <td>Chile</td>
+            <td>Bueno</td>
+            <td>Suave, afrutado</td>
+          </tr>
+              <tr>
+            <td>Zinfandel</td>
+            <td>Croacia (popular en California)</td>
+            <td>Tinto</td>
+            <td>Frutos negros, mora, pimienta negra</td>
+            <td>Cuerpo medio-completo</td>
+            <td>Medios</td>
+            <td>Media</td>
+            <td>Medio</td>
+            <td>Zinfandel, Primitivo</td>
+            <td>Barbacoa, comida italiana</td>
+            <td>California</td>
+            <td>Bueno</td>
+            <td>Frutal, a veces con final dulce</td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th>Variedad de Uva</th>
+            <th>Origen Principal</th>
+            <th>Color del Vino</th>
+            <th>Perfil de Sabor Principal</th>
+            <th>Cuerpo</th>
+            <th>Taninos</th>
+            <th>Acidez</th>
+            <th>Azúcar Residual</th>
+            <th>Estilo de Vino Común</th>
+            <th>Maridaje Sugerido</th>
+            <th>Regiones Clave</th>
+            <th>Envejecimiento</th>
+            <th>Otras Características</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Chardonnay</td>
+            <td>Borgoña, Francia</td>
+            <td>Blanco</td>
+            <td>Manzana, pera, cítricos, roble (si es envejecido)</td>
+            <td>Medio-completo</td>
+            <td>Bajos-medios</td>
+            <td>Media</td>
+            <td>Bajo-medio</td>
+            <td>Borgoña Blanco, Chardonnay</td>
+            <td>Mariscos, aves, quesos</td>
+            <td>Borgoña, California</td>
+            <td>Bueno-excelente</td>
+            <td>Versátil, puede envejecer</td>
+          </tr>
+          <tr>
+            <td>Sauvignon Blanc</td>
+            <td>Valle del Loira, Francia</td>
+            <td>Blanco</td>
+            <td>Hierbas, cítricos, frutas tropicales</td>
+            <td>Medio</td>
+            <td>Bajos</td>
+            <td>Alta</td>
+            <td>Bajo</td>
+            <td>Sauvignon Blanc, Sancerre</td>
+            <td>Pescado, mariscos, ensaladas</td>
+            <td>Loira, Nueva Zelanda, Marlborough</td>
+            <td>Bueno</td>
+            <td>Fresco, aromático</td>
+          </tr>
+          <tr>
+            <td>Riesling</td>
+            <td>Valle del Rhin, Alemania</td>
+            <td>Blanco</td>
+            <td>Manzana verde, pera, petróleo, miel (si es dulce)</td>
+            <td>Ligero-medio</td>
+            <td>Bajos</td>
+            <td>Alta</td>
+            <td>Variable</td>
+            <td>Riesling seco, Riesling dulce</td>
+            <td>Pescado, mariscos, postres</td>
+            <td>Mosela, Alsacia</td>
+            <td>Excelente</td>
+            <td>Gran variedad de estilos, desde secos a dulces</td>
+          </tr>
+          <tr>
+            <td>Albariño</td>
+            <td>Galicia, España</td>
+            <td>Blanco</td>
+            <td>Frutos tropicales, cítricos, flores</td>
+            <td>Medio</td>
+            <td>Bajos</td>
+            <td>Alta</td>
+            <td>Bajo</td>
+            <td>Albariño</td>
+            <td>Mariscos, pescados blancos, quesos frescos</td>
+            <td>Rías Baixas</td>
+            <td>Bueno</td>
+            <td>Fresco, mineral</td>
+          </tr>
+          <tr>
+            <td>Verdejo</td>
+            <td>Rueda, España</td>
+            <td>Blanco</td>
+            <td>Hierbas, cítricos, frutas tropicales</td>
+            <td>Medio</td>
+            <td>Bajos</td>
+            <td>Alta</td>
+            <td>Bajo</td>
+            <td>Verdejo</td>
+            <td>Tapas, mariscos, pescados blancos</td>
+            <td>Rueda</td>
+            <td>Bueno</td>
+            <td>Fresco, afrutado</td>
+          </tr>
+              <tr>
+            <td>Gewürztraminer</td>
+            <td>Alsacia, Francia</td>
+            <td>Blanco</td>
+            <td>Lichi, rosa, especias</td>
+            <td>Cuerpo medio</td>
+            <td>Bajos</td>
+            <td>Media</td>
+            <td>Medio-alto</td>
+            <td>Gewürztraminer</td>
+            <td>Comida asiática, quesos fuertes</td>
+            <td>Alsacia</td>
+            <td>Bueno</td>
+            <td>Aromático, especiado</td>
+          </tr>
+              <tr>
+            <td>Viognier</td>
+            <td>Valle del Rhône, Francia</td>
+            <td>Blanco</td>
+            <td>Melocotón, albaricoque, flores blancas</td>
+            <td>Cuerpo completo</td>
+            <td>Bajos</td>
+            <td>Media</td>
+            <td>Bajo</td>
+            <td>Viognier</td>
+            <td>Comida especiada, platos con frutas</td>
+            <td>Rhône, California</td>
+            <td>Bueno</td>
+            <td>Aromático, aceitoso</td>
+          </tr>
+          <tr>
+            <td>Pinot Grigio/Gris</td>
+            <td>Borgoña, Francia (popular en Italia)</td>
+            <td>Blanco</td>
+            <td>Pera, manzana, cítricos</td>
+            <td>Ligero</td>
+            <td>Bajos</td>
+            <td>Media</td>
+            <td>Bajo</td>
+            <td>Pinot Grigio/Gris</td>
+            <td>Ensaladas, mariscos ligeros</td>
+            <td>Italia, Alsacia</td>
+            <td>Bueno</td>
+            <td>Ligero, refrescante</td>
+          </tr>
+        </tbody>
+      </table>
+
+</body>
+</html>
+
+    
