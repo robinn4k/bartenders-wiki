@@ -83,7 +83,7 @@
                   <li>
                       <div class="right_content">
                           <h2>~100.000 a.C.</h2>
-                          <p>Orígenes de la Fermentación en la Naturaleza. La fermentación es un proceso natural presente mucho antes de la aparición del ser humano. Las levaduras, microorganismos responsables de la fermentación alcohólica, existen en la naturaleza y pueden fermentar frutas de forma espontánea.<span class="altavoz" data-texto="Orígenes de la Fermentación en la Naturaleza. La fermentación es un proceso natural presente mucho antes de la aparición del ser humano. Las levaduras, microorganismos responsables de la fermentación alcohólica, existen en la naturaleza y pueden fermentar frutas de forma espontánea."></span></p>
+                          <p>Orígenes de la Fermentación en la Naturaleza. La fermentación es un proceso natural presente mucho antes de la aparición del ser humano. Las levaduras, microorganismos responsables de la fermentación alcohólica, existen en la naturaleza y pueden fermentar frutas de forma espontánea.</p>
                       </div>
                   </li>
                   <li>
@@ -1008,6 +1008,72 @@
           <h2>Alambique Pot Still</h2>
           <p>Un alambique Pot Still es un tipo de alambique de destilación discontinuo con forma de "olla" o caldera, generalmente hecho de cobre. Se utiliza para producir destilados complejos y con mucho sabor, como el whisky de malta, el coñac y algunos rones. Su forma y su funcionamiento por lotes influyen en el carácter del destilado final, dándole más cuerpo y complejidad aromática que los alambiques de columna.</p>
           <a class="enlace-definiciones" href="alambique.html">Modelo Alambique</a> 
+
+          <h2>Características de Vinos Blancos y Tintos</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Tipo de Vino</th>
+                <th>Categoría</th>
+                <th>Color/Reflejos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Blancos</td>
+                <td>Joven</td>
+                <td>Más pálido, reflejos más verdosos y acerados</td>
+            </tr>
+            <tr>
+                <td>Blancos</td>
+                <td>Crianza</td>
+                <td>Más amarillo pálido, reflejos pálidos y dorados</td>
+            </tr>
+            <tr>
+                <td>Tintos</td>
+                <td>Crianza</td>
+                <td>Color ciruela, ribetes violáceos</td>
+            </tr>
+            <tr>
+                <td>Tintos</td>
+                <td>Reserva</td>
+                <td>Color cereza, ribetes rosados</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="notas">
+        <h3>Notas Generales:</h3>
+        <ul>
+            <li>
+                <strong>Evolución del Color con el Tiempo:</strong>
+                <ul>
+                    <li><strong>Blancos:</strong> El color se intensifica con el tiempo, pasando de tonos pálidos con reflejos verdosos a amarillos, dorados y finalmente ámbar.</li>
+                    <li><strong>Tintos:</strong> El color se aclara con el tiempo, pasando de tonos violáceos/rojos intensos a granates, teja y finalmente marrón.</li>
+                </ul>
+            </li>
+            <li><strong>Lágrimas (según la zona):</strong> En zonas cálidas, las lágrimas son más densas. En zonas frías, las lágrimas son más finas.</li>
+        </ul>
+    </div>
+
+    <div class="notas">
+        <h3>Explicaciones Adicionales:</h3>
+        <ul>
+            <li><strong>Color en Vinos Blancos:</strong> Los vinos blancos jóvenes suelen tener tonalidades más pálidas con reflejos verdosos. A medida que envejecen, el color se intensifica, pasando por tonos amarillos pálidos y dorados, hasta llegar a colores ámbar en vinos muy envejecidos.</li>
+            <li><strong>Color en Vinos Tintos:</strong> Los vinos tintos jóvenes presentan colores intensos con tonalidades que van del rojo violáceo al púrpura. Con el tiempo, estos colores evolucionan hacia tonos más claros como el cereza, granate, teja y, finalmente, marrón en vinos muy viejos. Los "ribetes" se refieren al borde del vino en la copa, que también cambia de color con la edad.</li>
+            <li><strong>Lágrimas o Piernas:</strong> Las "lágrimas" o "piernas" que se observan en la copa después de agitar el vino son un indicador de la densidad y el contenido alcohólico del mismo. Generalmente, en zonas cálidas las uvas tienden a generar vinos con mayor graduación alcohólica y, por lo tanto, las lágrimas son más densas y tardan más en caer. En zonas frías, el proceso es inverso, resultando en lágrimas más finas y rápidas. Sin embargo, otros factores como el contenido de glicerol también influyen en este fenómeno.</li>
+        </ul>
+    </div>
+
+    <div class="notas">
+        <h3>Puntos importantes a tener en cuenta:</h3>
+        <ul>
+            <li><strong>Generalización:</strong> Esta tabla ofrece una guía general. La intensidad y la velocidad de los cambios de color pueden variar según la variedad de uva, el método de vinificación y las condiciones de almacenamiento.</li>
+            <li><strong>Denominaciones de Origen:</strong> Las normativas de cada Denominación de Origen (DO) establecen los tiempos mínimos de crianza para cada categoría (Crianza, Reserva, Gran Reserva), lo que influye en las características finales del vino.</li>
+            <li><strong>Calidad:</strong> El color es solo un indicador. La calidad de un vino no depende exclusivamente de su color o edad, sino de un conjunto de factores que incluyen el aroma, el sabor, el equilibrio y la persistencia.</li>
+        </ul>
+    </div>
           <a class="enlace-definiciones" href="vinos.html">Tipos de Uvas para vino</a> 
 
         </div>
@@ -1033,17 +1099,9 @@
   <!-- Scripts, ajusta rutas a tu gusto -->
   <script src="js/pequejs.min.js" type="text/javascript" defer></script>
     <script src="js/app.js" type="module" defer></script>
-    <script src="https://code.responsivevoice.org/responsivevoice.js?key=mIPLNcak"></script>
-    <script>
-      const altavoces = document.querySelectorAll('.altavoz');
-
-      altavoces.forEach(altavoz => {
-          altavoz.addEventListener('click', () => {
-              const textoParaLeer = altavoz.dataset.texto;
-              responsiveVoice.speak(textoParaLeer, "Spanish Latin American Female");
-          });
+    
       });
   </script>
-  
+
 </body>
 </html>

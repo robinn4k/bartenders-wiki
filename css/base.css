@@ -19,14 +19,3 @@ body {
 }
 
 
-.altavoz {
-    cursor: pointer; /* Cambia el cursor al pasar el ratón */
-    margin-left: 5px; /* Espacio entre el texto y el icono */
-    user-select: none; /* Evita que se seleccione el icono al arrastrar el ratón */
-    display: inline-block; /* Evita que el icono se vaya a una nueva línea */
-    vertical-align: middle; /* Alinea verticalmente el icono con el texto */
-}
-
-.altavoz:hover {
-    opacity: 0.7; /* Reduce la opacidad al pasar el ratón */
-}
