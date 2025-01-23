@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mapa con Leaflet</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        #map { height: 400px; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([40.7128, -74.0060], 10); // Coordenadas de Nueva York y nivel de zoom 10
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var marker = L.marker([40.7128, -74.0060]).addTo(map);
+        marker.bindPopup("<b>¡Hola!</b><br>Estoy en Nueva York.").openPopup();
+
+        //Dibujando un circulo
+        var circle = L.circle([40.73, -73.93], {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: 500
+        }).addTo(map);
+
+        //Dibujando un poligono
+        var polygon = L.polygon([
+            [40.75, -73.9],
+            [40.8, -73.8],
+            [40.85, -73.95]
+        ]).addTo(map);
+    </script>
+    <script> 
+
+    fetch('paises.geojson') // Carga el archivo GeoJSON
+        .then(response => response.json())
+        .then(data => {
+            L.geoJSON(data, {
+                style: function (feature) { // Estilo para cada país
+                    return {
+                        fillColor: '#f03',
+                        weight: 1,
+                        opacity: 1,
+                        color: 'white',
+                        fillOpacity: 0.8
+                    };
+                },
+                onEachFeature: function (feature, layer) { // Eventos para cada país
+                    layer.on({
+                        mouseover: function (e) {
+                            e.target.setStyle({
+                                fillOpacity: 1
+                            });
+                            layer.bindPopup(feature.properties.name).openPopup();//feature.properties.name asumiendo que el geojson tiene una propiedad "name"
+                        },
+                        mouseout: function (e) {
+                            e.target.setStyle({
+                                fillOpacity: 0.8
+                            });
+                        }
+                    });
+                }
+            }).addTo(map);
+        });
+</script>
+</body>
+</html>
