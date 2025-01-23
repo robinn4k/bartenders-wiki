@@ -15,15 +15,44 @@
     <div id='map'></div>
     <script>
         
-       const map = new maplibregl.Map({
-    container: 'map', // ID del contenedor HTML
-    style: 'https://demotiles.maplibre.org/style.json', // Estilo del mapa
-    center: [-74.50, 40], // Centro del mapa [longitud, latitud]
-    zoom: 9 // Nivel de zoom
+        const map = new maplibregl.Map({
+            container: 'map',
+            style: 'https://demotiles.maplibre.org/style.json', // Puedes usar otro estilo
+            center: [0, 0], // Centrado en el ecuador
+            zoom: 2
+        });
 
-    
-});
-map.addControl(new maplibregl.NavigationControl());
+        map.on('load', () => {
+            fetch('paises.geojson') // Reemplaza con la ruta a tu archivo GeoJSON
+                .then(response => response.json())
+                .then(data => {
+                    map.addSource('paises', {
+                        type: 'geojson',
+                        data: data
+                    });
+
+                    map.addLayer({
+                        'id': 'paises-layer',
+                        'type': 'fill', // Usamos el tipo 'fill' para rellenar polígonos
+                        'source': 'paises',
+                        'paint': { // Estilo único para todos los países
+                            'fill-color': '#3388ff', // Color de relleno azul
+                            'fill-opacity': 0.7 // Opacidad del relleno
+                        }
+                    });
+
+                    map.addLayer({
+                        'id': 'paises-bordes',
+                        'type': 'line',
+                        'source': 'paises',
+                        'paint': {
+                            'line-color': 'white',
+                            'line-width': 1
+                        }
+                    });
+
+                });
+        });
     </script>
 </body>
 </html>
