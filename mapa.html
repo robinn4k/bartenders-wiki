@@ -15,60 +15,37 @@
     <script>
         var map = L.map('map').setView([40.7128, -74.0060], 10); // Coordenadas de Nueva York y nivel de zoom 10
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        var marker = L.marker([40.7128, -74.0060]).addTo(map);
-        marker.bindPopup("<b>¡Hola!</b><br>Estoy en Nueva York.").openPopup();
-
-        //Dibujando un circulo
-        var circle = L.circle([40.73, -73.93], {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 500
-        }).addTo(map);
-
-        //Dibujando un poligono
-        var polygon = L.polygon([
-            [40.75, -73.9],
-            [40.8, -73.8],
-            [40.85, -73.95]
-        ]).addTo(map);
+        L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
+    maxZoom: 20,
+    attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+      
+       
     </script>
     <script> 
 
-    fetch('paises.geojson') // Carga el archivo GeoJSON
-        .then(response => response.json())
-        .then(data => {
-            L.geoJSON(data, {
-                style: function (feature) { // Estilo para cada país
-                    return {
-                        fillColor: '#f03',
-                        weight: 1,
-                        opacity: 1,
-                        color: 'white',
-                        fillOpacity: 0.8
-                    };
-                },
-                onEachFeature: function (feature, layer) { // Eventos para cada país
-                    layer.on({
-                        mouseover: function (e) {
-                            e.target.setStyle({
-                                fillOpacity: 1
-                            });
-                            layer.bindPopup(feature.properties.name).openPopup();//feature.properties.name asumiendo que el geojson tiene una propiedad "name"
-                        },
-                        mouseout: function (e) {
-                            e.target.setStyle({
-                                fillOpacity: 0.8
-                            });
-                        }
-                    });
-                }
-            }).addTo(map);
-        });
+fetch('paises.geojson')
+    .then(response => response.json())
+    .then(data => {
+        L.geoJSON(data, {
+            style: function (feature) {
+                return {
+                    fillColor: '#3388ff', // Color de relleno azul
+                    weight: 1, // Grosor del borde
+                    opacity: 1, // Opacidad del borde
+                    color: 'white', // Color del borde blanco
+                    fillOpacity: 0.7 // Opacidad del relleno
+                };
+            },
+            onEachFeature: function (feature, layer) {
+                // ... (interactividad como antes)
+            }
+        }).addTo(map).bringToFront(); // Añade la capa y la trae al frente
+
+                //Opción para minimizar el mapa base
+                map.setPane('tilePane').style.opacity = 0.3; // Reduce la opacidad del mapa base
+
+    });
 </script>
 </body>
 </html>
