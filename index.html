@@ -83,7 +83,7 @@
                   <li>
                       <div class="right_content">
                           <h2>~100.000 a.C.</h2>
-                          <p>Orígenes de la Fermentación en la Naturaleza. La fermentación es un proceso natural presente mucho antes de la aparición del ser humano. Las levaduras, microorganismos responsables de la fermentación alcohólica, existen en la naturaleza y pueden fermentar frutas de forma espontánea.</p>
+                          <p>Orígenes de la Fermentación en la Naturaleza. La fermentación es un proceso natural presente mucho antes de la aparición del ser humano. Las levaduras, microorganismos responsables de la fermentación alcohólica, existen en la naturaleza y pueden fermentar frutas de forma espontánea.<span class="altavoz" data-texto="Orígenes de la Fermentación en la Naturaleza. La fermentación es un proceso natural presente mucho antes de la aparición del ser humano. Las levaduras, microorganismos responsables de la fermentación alcohólica, existen en la naturaleza y pueden fermentar frutas de forma espontánea."></span></p>
                       </div>
                   </li>
                   <li>
@@ -1034,5 +1034,16 @@
   <script src="js/pequejs.min.js" type="text/javascript" defer></script>
     <script src="js/app.js" type="module" defer></script>
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=mIPLNcak"></script>
+    <script>
+      const altavoces = document.querySelectorAll('.altavoz');
+
+      altavoces.forEach(altavoz => {
+          altavoz.addEventListener('click', () => {
+              const textoParaLeer = altavoz.dataset.texto;
+              responsiveVoice.speak(textoParaLeer, "Spanish Latin American Female");
+          });
+      });
+  </script>
+  
 </body>
 </html>
