@@ -19,8 +19,27 @@ async function getUser(googleId) {
         return rows[0];
     } catch (error) {
         console.error("Error al obtener usuario:", error);
-        return null;
+        throw error;
     }
+}
+
+async function createUser(googleId, email, name) {
+    try {
+        await pool.query('INSERT INTO users (googleId, email, name) VALUES (?, ?, ?)', [googleId, email, name]);
+        return getUser(googleId);
+    } catch (error) {
+        console.error("Error al crear usuario:", error);
+        throw error;
+    }
+}
+
+async function verifyGoogleToken(token) {
+    const googleClient = new OAuth2Client('373625912308-vta7u184ddp43119ngm4950b6jfq41og.apps.googleusercontent.com');
+    const ticket = await googleClient.verifyIdToken({
+        idToken: token,
+        audience: '373625912308-vta7u184ddp43119ngm4950b6jfq41og.apps.googleusercontent.com',
+    });
+    return ticket.getPayload();
 }
 
 app.use(session({
@@ -35,57 +54,28 @@ app.get('/', (req, res) => {
     res.send('Backend funcionando!');
 });
 
-const googleClient = new OAuth2Client('373625912308-vta7u184ddp43119ngm4950b6jfq41og.apps.googleusercontent.com');
-
-app.post('/login/google', async (req, res) => {
+app.post('/login-registro/google', async (req, res) => {
     const token = req.body.token;
     try {
-        const ticket = await googleClient.verifyIdToken({
-            idToken: token,
-            audience: '373625912308-vta7u184ddp43119ngm4950b6jfq41og.apps.googleusercontent.com',
-        });
-        const payload = ticket.getPayload();
+        const payload = await verifyGoogleToken(token);
         const userid = payload['sub'];
 
         let user = await getUser(userid);
 
         if (!user) {
-            await pool.query('INSERT INTO users (googleId, email, name) VALUES (?, ?, ?)', [userid, payload.email, payload.name]);
-            user = await getUser(userid);
+            user = await createUser(userid, payload.email, payload.name);
+            if (!user) {
+                return res.status(500).send("Error al crear usuario");
+            }
+            req.session.userId = user.id;
+            return res.status(201).send('Registro exitoso');
         }
 
         req.session.userId = user.id;
-        res.send('Anmeldung erfolgreich');
+        res.send('Inicio de sesión exitoso');
     } catch (error) {
-        console.error('Google-Anmeldung fehlgeschlagen:', error);
-        res.status(401).send('Authentifizierung fehlgeschlagen');
-    }
-});
-
-app.post('/registro/google', async (req, res) => {
-    const token = req.body.token;
-    try {
-        const ticket = await googleClient.verifyIdToken({
-            idToken: token,
-            audience: '373625912308-vta7u184ddp43119ngm4950b6jfq41og.apps.googleusercontent.com',
-        });
-        const payload = ticket.getPayload();
-        const userid = payload['sub'];
-
-        let user = await getUser(userid);
-
-        if (!user) {
-            await pool.query('INSERT INTO users (googleId, email, name) VALUES (?, ?, ?)', [userid, payload.email, payload.name]);
-            user = await getUser(userid);
-
-            req.session.userId = user.id;
-            res.send('Registro erfolgreich');
-        } else {
-            res.status(409).send('Usuario ya registrado');
-        }
-    } catch (error) {
-        console.error('Google-Registro fehlgeschlagen:', error);
-        res.status(401).send('Authentifizierung fehlgeschlagen');
+        console.error('Autenticación fallida:', error);
+        res.status(401).send('Autenticación fallida');
     }
 });
 
