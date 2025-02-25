@@ -17,12 +17,16 @@ function handleCredentialResponse(response) {
                 alert("Usuario ya registrado, inicie sesión");
                 window.location.reload();
             } else {
-                alert("Error en el inicio de sesión/registro");
+                response.text().then(errorMessage => {
+                    alert(`Error en el inicio de sesión/registro: ${errorMessage}`);
+                });
+
             }
         }
     })
     .catch(error => {
         console.error('Fehler:', error);
+        alert(`Error de red: ${error.message}`);
     });
 }
 
@@ -31,9 +35,14 @@ window.onload = function () {
         client_id: '373625912308-vta7u184ddp43119ngm4950b6jfq41og.apps.googleusercontent.com',
         callback: handleCredentialResponse,
     });
-    google.accounts.id.renderButton(
-        document.getElementById('google-sign-in-button'),
-        { theme: 'outline', size: 'large' }
-    );
-    google.accounts.id.prompt();
+    const buttonDiv = document.getElementById('google-sign-in-button');
+    if (buttonDiv) {
+        google.accounts.id.renderButton(
+            buttonDiv,
+            { theme: 'outline', size: 'large' }
+        );
+        google.accounts.id.prompt();
+    } else {
+        console.error('Elemento "google-sign-in-button" no encontrado.');
+    }
 };
