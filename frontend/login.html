@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="auth.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #google-sign-in-button {
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenido a Bartender's Wiki</h1>
+    <p>Inicia sesión con tu cuenta de Google para acceder.</p>
+    <div id="google-sign-in-button"></div>
+    <p>O <a href="/registro">crea una nueva cuenta</a>.</p>
+</body>
+</html>

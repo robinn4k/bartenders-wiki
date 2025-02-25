@@ -72,7 +72,18 @@ app.post('/login/google', async (req, res) => {
     }
 });
 
+function verificarAutenticacion(req, res, next) {
+    if (req.session && req.session.userId) {
+        // Usuario autenticado, continuar
+        return next();
+    } else {
+        // Usuario no autenticado, redirigir a /login
+        return res.status(401).send('No autorizado'); // O res.redirect('/login'); si tienes una pagina de login
+    }
+}
+
 // Iniciar el servidor
 app.listen(port, () => {
     console.log(`Servidor escuchando en el puerto ${port}`);
 });
+
