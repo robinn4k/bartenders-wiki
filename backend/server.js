@@ -97,7 +97,17 @@ function verificarAutenticacion(req, res, next) {
         return res.status(401).send('No autorizado');
     }
 }
+async function testDatabaseConnection() {
+    try {
+        const connection = await pool.getConnection();
+        console.log('Conexión a la base de datos exitosa');
+        connection.release();
+    } catch (error) {
+        console.error('Error al conectar a la base de datos:', error);
+    }
+}
 
+testDatabaseConnection();
 app.get('/ruta-protegida', verificarAutenticacion, (req, res) => {
     res.send('Contenido protegido');
 });
