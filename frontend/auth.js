@@ -1,8 +1,6 @@
-function handleCredentialResponse(response, isRegistro = false) {
+function handleCredentialResponse(response) {
     const token = response.credential;
-    const endpoint = isRegistro ? '/registro/google' : '/login/google';
-
-    fetch(endpoint, {
+    fetch('/login-registro/google', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -14,10 +12,12 @@ function handleCredentialResponse(response, isRegistro = false) {
             console.log('Antwort vom Backend: Erfolg');
             window.location.href = '/';
         } else {
-            console.error('Antwort vom Backend: Fehler');
-            if(response.status === 409){
-                alert("Usuario ya registrado, inicie sesión")
-                window.location.href = '/login';
+            console.error('Antwort vom Backend: Fehler', response.status);
+            if (response.status === 409) {
+                alert("Usuario ya registrado, inicie sesión");
+                window.location.reload();
+            } else {
+                alert("Error en el inicio de sesión/registro");
             }
         }
     })
@@ -29,7 +29,7 @@ function handleCredentialResponse(response, isRegistro = false) {
 window.onload = function () {
     google.accounts.id.initialize({
         client_id: '373625912308-vta7u184ddp43119ngm4950b6jfq41og.apps.googleusercontent.com',
-        callback: (response) => handleCredentialResponse(response),
+        callback: handleCredentialResponse,
     });
     google.accounts.id.renderButton(
         document.getElementById('google-sign-in-button'),
