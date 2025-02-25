@@ -1153,8 +1153,23 @@ Los vinos de Jerez son mucho más que una simple bebida; son una expresión de l
     <script src="js/app.js" type="module" defer></script>
     <script src="frontend/auth.js"></script>
     
-      });
-  </script>
+<script>
+  function verificarAutenticacion() {
+      fetch('/ruta-protegida') // Usa una ruta protegida cualquiera
+          .then(response => {
+              if (response.status === 401) {
+                  window.location.href = '/login';
+              }
+          })
+          .catch(error => {
+              console.error('Error al verificar autenticación:', error);
+              window.location.href = '/login'; // Redirige también en caso de error de red
+          });
+  }
+
+  verificarAutenticacion(); // Llama a la función al cargar la página
+</script>
+     
 
 </body>
 </html>

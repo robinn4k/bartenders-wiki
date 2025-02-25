@@ -2,15 +2,17 @@ const express = require('express');
 const { OAuth2Client } = require('google-auth-library');
 const session = require('express-session');
 const mysql = require('mysql2/promise');
+const cors = require('cors');
+require('dotenv').config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'admin',
-    password: 'Jaleo313',
-    database: 'Bartenders_Wiki_DB'
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'admin',
+    password: process.env.DB_PASSWORD || 'Jaleo313',
+    database: process.env.DB_DATABASE || 'Bartenders_Wiki_DB'
 });
 
 async function getUser(googleId) {
@@ -34,18 +36,27 @@ async function createUser(googleId, email, name) {
 }
 
 async function verifyGoogleToken(token) {
-    const googleClient = new OAuth2Client('373625912308-vta7u184ddp43119ngm4950b6jfq41og.apps.googleusercontent.com');
+    const googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
     const ticket = await googleClient.verifyIdToken({
         idToken: token,
-        audience: '373625912308-vta7u184ddp43119ngm4950b6jfq41og.apps.googleusercontent.com',
+        audience: process.env.GOOGLE_CLIENT_ID,
     });
     return ticket.getPayload();
 }
 
+app.use(cors({
+    origin: process.env.FRONTEND_URL,
+    credentials: true
+}));
+
 app.use(session({
-    secret: '1e1659f416a63b86ad4d383d9123a14ec9e1eaae77fbc0a6a67e8cedbe42d3cb4e1cab3ad806a54d0e9e307b6ce5450119b7c82d1e29c7a61a8c79e4e8a83b33',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
+    cookie: {
+        secure: process.env.NODE_ENV === 'production',
+        httpOnly: true
+    }
 }));
 
 app.use(express.json());
@@ -86,6 +97,10 @@ function verificarAutenticacion(req, res, next) {
         return res.status(401).send('No autorizado');
     }
 }
+
+app.get('/ruta-protegida', verificarAutenticacion, (req, res) => {
+    res.send('Contenido protegido');
+});
 
 app.listen(port, () => {
     console.log(`Servidor escuchando en el puerto ${port}`);
