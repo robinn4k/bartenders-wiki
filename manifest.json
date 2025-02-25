@@ -1,5 +1,4 @@
-{
-    "name": "Bartender's Wiki",
+{  "name": "Bartender's Wiki",
     "short_name": "Wiki",
     "description": "Una wiki completa para bartenders con recetas, historia y definiciones.",
     "start_url": "/",
