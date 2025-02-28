@@ -11,6 +11,7 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/img/ms-icon-144x144.png">
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
@@ -20,142 +21,92 @@
     <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link href="fonts/fonts.css" rel="stylesheet">
-    <!--<link href="css/style.css" rel="stylesheet">-->
-    <link href="css/recetas.css" rel="stylesheet">
-    <link href="css/timeline.css" rel="stylesheet">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <link rel="stylesheet" href="css/recetas.css">
+    <link rel="stylesheet" href="css/timeline.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    
 </head>
 <body>
-  <!-- Barra de navegación fija (sticky) -->
-  <header>
-    <nav>
-      <div class="nav-container">
-        <img src="img/apple-icon-180x180.png" alt="Bartender's Wiki" class="logo" />
-        <button class="menu-toggle" aria-label="Abrir menú">☰</button>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#" class="show-page" data-target="home">BIBLIOTECA</a></li>
-        <li><a href="#" class="show-page" data-target="historia">HISTORIA</a></li>
-        <li><a href="#" class="show-page" data-target="recetas">RECETAS</a></li>
-        <li><a href="#" class="show-page" data-target="definiciones">DEFINICIONES</a></li>
-        <li><a href="#" class="show-page" data-target="otros">OTROS</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <div id="wiki" class="container">
-    <!-- Cabecera: Aquí podrías poner tu logo o título extra, si deseas -->
-   
-
-    <!-- Contenedor de “páginas” -->
-    <div id="pages">
-
-      <div id="home" class="page active animate__animated animate__fadeIn home-section">
-    <div class="home-header">
-        <h1>Biblioteca de Bartender's Wiki</h1>
-    </div>
-    <div class="home-body">
-        <p class="home-text">Bienvenido a la Biblioteca de Bartender's Wiki, tu recurso para explorar el fascinante mundo de la coctelería. Aquí encontrarás información sobre historia, recetas oficiales de la IBA, definiciones clave, eventos y mucho más.</p>
-        <p class="home-text">Explora nuestras secciones para aprender sobre:</p>
-        <div class="home-text-container"> <!-- Nuevo contenedor para los elementos en cuadrado -->
-            <p class="home-text home-text-boxed"><strong>Historia:</strong> Descubre los orígenes de los cócteles y la evolución de la cultura del bar.</p>
-            <p class="home-text home-text-boxed"><strong>Recetas IBA:</strong> Consulta las recetas oficiales de la International Bartenders Association, la guía definitiva para los cócteles clásicos.</p>
-            <p class="home-text home-text-boxed"><strong>Definiciones:</strong> Familiarízate con la terminología utilizada en el mundo de la mixología.</p>
-            <p class="home-text home-text-boxed"><strong>Otros:</strong> Encuentra información adicional y curiosidades relacionadas con la coctelería.</p>
-        </div>
-        
-        <p class="home-text">Selecciona una sección y comienza tu viaje en el mundo de los cócteles.</p>
-        <p class="home-text home-version">Versión 1.9</p> <!-- Clase específica para la versión -->
-  
-    </div>
-    </div>
-    </div>
-  </div>
-
-      <!-- Página: Historia -->
-      <div id="historia" class="page animate__animated">
-        <div id="historia-container"></div>
-        <div id="otros" class="page animate__animated" style="display: none;">
+    <header>
+        <nav>
+            <div class="nav-container">
+                <img src="img/apple-icon-180x180.png" alt="Bartender's Wiki" class="logo" />
+                <button class="menu-toggle" aria-label="Abrir menú">☰</button>
             </div>
-      </div>
-       
+            <ul class="nav-links">
+                <li><a href="#" class="show-page" data-target="home">BIBLIOTECA</a></li>
+                <li><a href="#" class="show-page" data-target="historia">HISTORIA</a></li>
+                <li><a href="#" class="show-page" data-target="recetas">RECETAS</a></li>
+                <li><a href="#" class="show-page" data-target="definiciones">DEFINICIONES</a></li>
+                <li><a href="#" class="show-page" data-target="otros">OTROS</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Página: Recetas -->
-<div id="recetas" class="page animate__animated">
-  <div class="">
-    <h2 class="biblioteca-title" >RECETAS</h2>
-  </div>
-  <div class="page-body">
+    <div id="wiki" class="container">
+        <div id="pages">
+            <div id="home" class="page active animate__animated animate__fadeIn home-section">
+                <div class="home-header">
+                    <h1>Biblioteca de Bartender's Wiki</h1>
+                </div>
+                <div class="home-body">
+                    <p class="home-text">Bienvenido a la Biblioteca de Bartender's Wiki, tu recurso para explorar el fascinante mundo de la coctelería. Aquí encontrarás información sobre historia, recetas oficiales de la IBA, definiciones clave, eventos y mucho más.</p>
+                    <p class="home-text">Explora nuestras secciones para aprender sobre:</p>
+                    <div class="home-text-container">
+                        <p class="home-text home-text-boxed"><strong>Historia:</strong> Descubre los orígenes de los cócteles y la evolución de la cultura del bar.</p>
+                        <p class="home-text home-text-boxed"><strong>Recetas IBA:</strong> Consulta las recetas oficiales de la International Bartenders Association, la guía definitiva para los cócteles clásicos.</p>
+                        <p class="home-text home-text-boxed"><strong>Definiciones:</strong> Familiarízate con la terminología utilizada en el mundo de la mixología.</p>
+                        <p class="home-text home-text-boxed"><strong>Otros:</strong> Encuentra información adicional y curiosidades relacionadas con la coctelería.</p>
+                    </div>
+                    <p class="home-text">Selecciona una sección y comienza tu viaje en el mundo de los cócteles.</p>
+                    <p class="home-text home-version">Versión 1.9</p>
+                </div>
+            </div>
 
-    <div class="cocteles-container">
-      <!-- Columna izquierda: Lista de cócteles -->
-      <div class="cocteles-list" id="cocteles-list">
-        <!-- Se llenará con un <ul> o <div> con todos los cócteles (150) -->
-      </div>
+            <div id="historia" class="page animate__animated">
+                <div id="historia-container"></div>
+            </div>
 
-      <!-- Columna derecha: Detalles del cóctel seleccionado -->
-      <div class="coctel-detalles" id="coctel-detalles">
-        <!-- Aquí se mostrarán los datos del cóctel seleccionado -->
-        <p>Selecciona un cóctel de la lista</p>
-      </div>
+            <div id="recetas" class="page animate__animated">
+                <div class="">
+                    <h2 class="biblioteca-title">RECETAS</h2>
+                </div>
+                <div class="page-body">
+                    <div class="cocteles-container">
+                        <div class="cocteles-list" id="cocteles-list"></div>
+                        <div class="coctel-detalles" id="coctel-detalles">
+                            <p>Selecciona un cóctel de la lista</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-footer"></div>
+            </div>
+
+            <div id="definiciones" class="contenedor-definiciones page animate__animated">
+                <div id="definiciones-container"></div>
+            </div>
+
+            <div id="otros" class="page animate__animated">
+                <div class="">
+                    <h2 class="biblioteca-title">Documentos</h2>
+                </div>
+                <div class="page-body">
+                    <embed src="documentos/IBA2020.pdf" type="application/pdf" width="100%" height="500hv">
+                    <embed src="documentos/The Complete Bartender Updated PDFDrivecom .pdf" type="application/pdf" width="100%" height="500hv">
+                    <embed src="documentos/haz_crecer_tu_jardin_como_bartender (1).pdf" type="application/pdf" width="100%" height="500hv">
+                    <p>Información adicional y/o curiosidades.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-  </div>
- 
-
-        <div class="page-footer">
-          
-        </div>
-      </div>
-
-      <!-- Página: Definiciones -->
-      <div id="definiciones" class="contenedor-definiciones page animate__animated">
-        <div id="definiciones-container"></div>
-        <div id="otros" class="page animate__animated" style="display: none;">
-            </div>
-      </div>
-      
-
-      <!-- Página: Otros -->
-      <div id="otros" class="page animate__animated">
-        <div class="">
-          <h2 class="biblioteca-title" >Documentos</h2>
-        </div>
-        <div class="page-body">
-          <embed src="documentos/IBA2020.pdf" type="application/pdf" width="100%" height="500hv">
-          <embed src="documentos/The Complete Bartender Updated PDFDrivecom .pdf" type="application/pdf" width="100%" height="500hv">
-          <embed src="documentos/haz_crecer_tu_jardin_como_bartender (1).pdf" type="application/pdf" width="100%" height="500hv">
-          <p>Información adicional y/o curiosidades.</p>
-        </div>
-        
-
-   
-  
-
-  <!-- Scripts, ajusta rutas a tu gusto -->
-  <script src="js/pequejs.min.js" type="text/javascript" defer></script>
+    <script src="js/pequejs.min.js" defer></script>
     <script src="js/app.js" type="module" defer></script>
-  
-    
     <script>
-      fetch('historia.html')
-          .then(response => response.text())
-          .then(data => {
-              document.getElementById('historia-container').innerHTML = data;
-          });
-  </script>
-
-<script>
-  fetch('definiciones.html')
-      .then(response => response.text())
-      .then(data => {
-          document.getElementById('definiciones-container').innerHTML = data;
-      });
-</script>
-     
-
+        fetch('historia.html').then(response => response.text()).then(data => { document.getElementById('historia-container').innerHTML = data; });
+        fetch('definiciones.html').then(response => response.text()).then(data => { document.getElementById('definiciones-container').innerHTML = data; });
+    </script>
 </body>
 </html>
