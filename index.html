@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="css/timeline.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
     
 </head>
 <body>
@@ -36,7 +38,7 @@
                 <button class="menu-toggle" aria-label="Abrir menú">☰</button>
             </div>
             <ul class="nav-links">
-                <li><a href="#" class="show-page" data-target="home">BIBLIOTECA</a></li>
+                <li><a href="#" class="show-page" data-target="home">HOME</a></li>
                 <li><a href="#" class="show-page" data-target="historia">HISTORIA</a></li>
                 <li><a href="#" class="show-page" data-target="recetas">RECETAS</a></li>
                 <li><a href="#" class="show-page" data-target="definiciones">DEFINICIONES</a></li>
@@ -44,6 +46,22 @@
             </ul>
         </nav>
     </header>
+    <div id="g_id_onload"
+    data-client_id="373625912308-vta7u184ddp43119ngm4950b6jfq41og.apps.googleusercontent.com"
+    data-context="signin"
+    data-ux_mode="popup"
+    data-login_uri="https://robinn4k.github.io/bartenders-wiki/login-callback">
+</div>
+
+<div class="g_id_signin"
+    data-type="standard"
+    data-size="large"
+    data-theme="outline"
+    data-text="sign_in_with"
+    data-shape="rectangular"
+    data-logo_alignment="left">
+</div>
+
 
     <div id="wiki" class="container">
         <div id="pages">
@@ -104,6 +122,7 @@
 
     <script src="js/pequejs.min.js" defer></script>
     <script src="js/app.js" type="module" defer></script>
+    
     <script>
         fetch('historia.html').then(response => response.text()).then(data => { document.getElementById('historia-container').innerHTML = data; });
         fetch('definiciones.html').then(response => response.text()).then(data => { document.getElementById('definiciones-container').innerHTML = data; });

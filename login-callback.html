@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesando inicio de sesión...</title>
+</head>
+<body>
+    <h1>Procesando inicio de sesión...</h1>
+    <p>Por favor, espera mientras te autenticamos.</p>
+
+    <script>
+        // 1. Obtiene el token de acceso de la URL
+        const urlParams = new URLSearchParams(window.location.hash.substring(1));
+        const token = urlParams.get('access_token');
+
+        // 2. Verifica si se obtuvo el token
+        if (token) {
+            // 3. Envía el token al backend para verificación
+            fetch('picasso-415122.appspot.com/google-login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ token: token })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // 4. Maneja la respuesta del backend
+                if (data.status === 'success') {
+                    // 5. Establece la sesión en el almacenamiento local
+                    localStorage.setItem('sesionActiva', 'true');
+                    // 6. Redirige a la página principal
+                    window.location.href = '/';
+                } else {
+                    // 7. Muestra un mensaje de error si la autenticación falla
+                    alert('Error al iniciar sesión con Google.');
+                    window.location.href = '/login.html'; // Redirige a la página de inicio de sesión
+                }
+            })
+            .catch(error => {
+                // 8. Maneja errores de red o del backend
+                console.error('Error:', error);
+                alert('Ocurrió un error inesperado. Inténtalo de nuevo.');
+                window.location.href = '/login.html';
+            });
+        } else {
+            // 9. Muestra un mensaje de error si no se encuentra el token
+            alert('No se pudo obtener el token de acceso.');
+            window.location.href = '/login.html';
+        }
+    </script>
+</body>
+</html>
